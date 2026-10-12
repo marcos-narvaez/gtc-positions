@@ -141,7 +141,7 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
 </div>
 
 <footer>
-  Book from the team's TMSG tickets; fills estimated at the next trade after each ticket (TMSG's Next Tick rule). Prices from Yahoo, delayed a few minutes, refreshed by the lab every 10 minutes; when the Live box shows a time, prices update every 15 seconds from Finnhub. The world index is approximated by ACWI. TMSG is the official record.
+  Book from the team's TMSG tickets; fills estimated at the next trade after each ticket (TMSG's Next Tick rule). Prices from Yahoo, delayed a few minutes, refreshed by the lab every 10 minutes; when the Live box is green, prices stream trade by trade from Finnhub. The world index is approximated by ACWI. TMSG is the official record.
   Keys: <kbd>↑</kbd><kbd>↓</kbd> symbol · <kbd>1</kbd>–<kbd>6</kbd> timeframe · <kbd>C</kbd> candles/line. <a href="summary.html">Plain summary</a>.
 </footer>
 
@@ -381,38 +381,65 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
       renderTop(); renderRows(); await draw();
     } catch (e) { $('detail').innerHTML = `<div class="loading">Could not load data (${esc(e.message)}). The page retries in five minutes.</div>`; }
   }
-  // ---------- live quotes (optional; on when the lab publishes data/_live.json) ----------
-  async function liveTick() {
-    if (!book || !liveCfg) return;
+  // ---------- live prices (optional; on when the lab publishes data/_live.json) ----------
+  // One WebSocket to Finnhub streams every trade; REST is used only for previous closes (today's % change).
+  const live = { last: {}, prev: {}, ws: null, dirty: false, retry: 0 };
+  async function loadPrevCloses() {
     const syms = book.rows.map(r => r.yahoo).concat(['ACWI']);
-    const q = {};
-    await Promise.all(syms.map(async s => { try { const r = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(s)}&token=${liveCfg.key}`); if (r.ok) { const j = await r.json(); if (j && j.c) q[s] = j; } } catch {} }));
-    if (!Object.keys(q).length) return;
+    await Promise.all(syms.map(async s => { try { const r = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(s)}&token=${liveCfg.key}`); if (r.ok) { const j = await r.json(); if (j && j.pc) { live.prev[s] = j.pc; if (j.c) live.last[s] = j.c; } } } catch {} }));
+    live.dirty = true;
+  }
+  function applyLive() {
+    if (!live.dirty || !book) return;
+    live.dirty = false;
     const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
     let value = book.cash || 0, dayPnl = 0;
     book.rows.forEach(r => {
-      const x = q[r.yahoo]; if (x) { r.last = x.c; r.day_pct = x.pc ? x.c / x.pc - 1 : r.day_pct; }
+      const px = live.last[r.yahoo], pc = live.prev[r.yahoo];
+      if (px) r.last = px;
+      if (px && pc) r.day_pct = px / pc - 1;
       if (r.shares && r.last) { r.value = r.shares * r.last; r.pnl = r.value - r.notional; r.pnl_pct = r.entry ? r.last / r.entry - 1 : r.pnl_pct;
-        const base = (r.entered || '').slice(0, 10) === today ? r.entry : (x && x.pc); if (base) dayPnl += r.shares * (r.last - base); }
+        r.stop_distance = r.stop ? r.stop / r.last - 1 : r.stop_distance;
+        const base = (r.entered || '').slice(0, 10) === today ? r.entry : pc; if (base) dayPnl += r.shares * (r.last - base); }
       value += r.value || 0;
     });
     book.rows.forEach(r => r.weight = r.value && value ? r.value / value : r.weight);
     book.value = value; book.book_ret = value / book.start_value - 1; book.day_pnl = dayPnl;
-    if (q.ACWI && book.bench_entry) { book.bench_ret = q.ACWI.c / book.bench_entry - 1; book.relative = book.book_ret - book.bench_ret; }
+    if (live.last.ACWI && book.bench_entry) { book.bench_ret = live.last.ACWI / book.bench_entry - 1; book.relative = book.book_ret - book.bench_ret; }
     renderTop(); renderRows(); renderWatch(); renderDetail();
-    $('s-live-wrap').hidden = false;
-    $('s-live').textContent = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', second: '2-digit' }) + ' ET';
-    if (liveRef && liveRef.kind === 'stock' && q[liveRef.sym]) {
-      const c = q[liveRef.sym].c, b = liveRef.last; b.close = c; b.high = Math.max(b.high, c); b.low = Math.min(b.low, c);
+    if (liveRef && liveRef.kind === 'stock' && live.last[liveRef.sym]) {
+      const c = live.last[liveRef.sym], b = liveRef.last; b.close = c; b.high = Math.max(b.high, c); b.low = Math.min(b.low, c);
       try { liveRef.series.update(liveRef.candle ? b : { time: b.time, value: c }); } catch {}
     } else if (liveRef && liveRef.kind === 'team') {
       try { liveRef.series.update({ time: liveRef.time, value: +(value / book.start_value * 100).toFixed(3) }); } catch {}
     }
   }
+  function connect() {
+    const syms = book.rows.map(r => r.yahoo).concat(['ACWI']);
+    const ws = new WebSocket(`wss://ws.finnhub.io?token=${liveCfg.key}`);
+    live.ws = ws;
+    ws.onopen = () => { live.retry = 0; syms.forEach(s => ws.send(JSON.stringify({ type: 'subscribe', symbol: s }))); setLiveStatus('connected'); };
+    ws.onmessage = ev => {
+      let m; try { m = JSON.parse(ev.data); } catch { return; }
+      if (m.type !== 'trade' || !m.data) return;
+      for (const t of m.data) live.last[t.s] = t.p;
+      live.dirty = true; live.at = Date.now();
+    };
+    ws.onclose = () => { setLiveStatus('reconnecting'); live.ws = null; const wait = Math.min(30000, 1000 * 2 ** live.retry++); setTimeout(connect, wait); };
+    ws.onerror = () => { try { ws.close(); } catch {} };
+  }
+  function setLiveStatus(word) {
+    $('s-live-wrap').hidden = false;
+    const t = live.at ? new Date(live.at).toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', second: '2-digit' }) + ' ET' : '';
+    $('s-live').innerHTML = word === 'connected' ? `<span class="up">●</span> ${t || 'streaming'}` : `<span class="muted">○ ${word}</span>`;
+  }
   async function startLive() {
     try { liveCfg = await getJSON('data/_live.json'); } catch { liveCfg = null; }
-    clearInterval(liveTimer);
-    if (liveCfg && liveCfg.key) { liveTick(); liveTimer = setInterval(liveTick, (liveCfg.every_s || 15) * 1000); }
+    if (!liveCfg || !liveCfg.key || !book || live.ws) return;
+    await loadPrevCloses();
+    connect();
+    setInterval(() => { applyLive(); if (live.ws && live.at) setLiveStatus('connected'); }, 1000);  // repaint at most once a second
+    setInterval(loadPrevCloses, 10 * 60 * 1000);
   }
 
   if (!LWC) { $('legend').textContent = 'The charting library did not load; check your connection.'; }
