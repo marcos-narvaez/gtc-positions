@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="300">
+<title>GTC Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root { --bg:#fff; --fg:#16181c; --muted:#646a73; --rule:#dfe2e6; --accent:#1f5aa6; --up:#1b7f4b; --down:#b3261e; --sans:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace; }
+@media (prefers-color-scheme: dark) { :root { --bg:#111317; --fg:#e9ebee; --muted:#9aa1ab; --rule:#2e3238; --accent:#7fb0f0; --up:#5cc58d; --down:#f08a80; color-scheme:dark; } }
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--fg); font-family:var(--sans); font-size:15px; line-height:1.5; font-variant-numeric:tabular-nums; }
+.page { max-width:1000px; margin:0 auto; padding:36px 18px 56px; display:grid; gap:32px; }
+.eyebrow { font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+h1 { font-size:2rem; font-weight:600; margin:6px 0 4px; letter-spacing:-.01em; }
+.muted { color:var(--muted); }
+.tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); }
+.tile { background:var(--bg); padding:16px 18px; }
+.tile .k { font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+.tile .v { font-size:1.65rem; font-weight:600; margin-top:4px; }
+.tile .s { font-size:13px; color:var(--muted); }
+.up { color:var(--up); } .down { color:var(--down); }
+h2 { font-size:1.1rem; font-weight:600; margin:0 0 10px; }
+.tablewrap { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; min-width:760px; }
+th { text-align:right; font-family:var(--mono); font-weight:400; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--fg); padding:6px 0 6px 14px; white-space:nowrap; }
+th:first-child, td:first-child { text-align:left; padding-left:0; }
+td { border-bottom:1px solid var(--rule); padding:10px 0 10px 14px; vertical-align:top; }
+td.num { text-align:right; font-family:var(--mono); font-size:13.5px; white-space:nowrap; }
+.tick { font-weight:600; } .name { color:var(--muted); font-size:13px; }
+.thesis { font-size:13px; max-width:46ch; margin-top:2px; }
+.exit { font-size:12px; color:var(--muted); max-width:46ch; }
+.sub { font-size:12px; }
+.tag { font-family:var(--mono); font-size:10.5px; font-weight:400; color:var(--accent); border:1px solid currentColor; border-radius:3px; padding:0 4px; margin-left:4px; vertical-align:2px; }
+svg { display:block; width:100%; height:auto; font-family:var(--mono); }
+.grid { stroke:var(--rule); stroke-width:1; } .axis { font-size:11px; fill:var(--muted); }
+polyline { fill:none; stroke-width:2; } .book { stroke:var(--accent); } .bench { stroke:var(--muted); stroke-dasharray:4 4; }
+.legend { font-size:13px; color:var(--muted); display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.sw { display:inline-block; width:20px; height:2px; vertical-align:middle; } .sw.book { background:var(--accent); } .sw.bench { border-top:2px dashed var(--muted); height:0; }
+footer { font-size:12.5px; color:var(--muted); border-top:1px solid var(--rule); padding-top:14px; }
+</style></head>
+<body><div class="page">
+  <header>
+    <div class="eyebrow">Bloomberg Global Trading Challenge · GTC-2026 North America Group B</div>
+    <h1>Our book</h1>
+    <div class="muted">Updated Mon Oct 12, 2:11 PM ET · refreshes every 10 minutes in market hours</div>
+  </header>
+
+  <section class="tiles">
+    <div class="tile"><div class="k">Book value</div><div class="v">$996,778</div><div class="s">started at $1,000,000</div></div>
+    <div class="tile"><div class="k">Since entry</div><div class="v down">−0.32%</div><div class="s">−$3,222</div></div>
+    <div class="tile"><div class="k">vs world index</div><div class="v down">−0.35%</div><div class="s">index +0.02% · how we are scored</div></div>
+    <div class="tile"><div class="k">Today</div><div class="v down">−$3,222</div><div class="s">cash $0</div></div>
+  </section>
+
+  <section>
+    <h2>Positions</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Name</th><th>Bought</th><th>Est. fill</th><th>Last</th><th>Value</th><th>P&amp;L</th><th>Today</th><th>Weight</th></tr></thead>
+      <tbody>
+      <tr>
+        <td><div class="tick">PENG </div><div class="name">Penguin Solutions</div><div class="thesis">Post-earnings drift after a record quarter and an FY27 EPS guide ~30% above consensus.</div><div class="exit">Exit if: Penguin closes below $72.61, cuts guidance, or announces an equity offering.</div></td>
+        <td class="num">$180,000</td>
+        <td class="num">77.72</td>
+        <td class="num">78.85</td>
+        <td class="num">$182,617</td>
+        <td class="num up">+$2,617<div class="sub">+1.5%</div></td>
+        <td class="num up">+3.4%</td>
+        <td class="num">18.3%</td>
+      </tr>
+      <tr>
+        <td><div class="tick">HUM </div><div class="name">Humana</div><div class="thesis">Post-event drift after the 2027 star-ratings blowout; brokers raising targets (Raymond James upgrade Oct 12).</div><div class="exit">Exit if: Humana closes below $410, CMS recalculates or corrects the 2027 star ratings, or UnitedHealth reports a medical-cost or utilization spike on Oct 13.</div></td>
+        <td class="num">$180,000</td>
+        <td class="num">431.25</td>
+        <td class="num">433.17</td>
+        <td class="num">$180,799</td>
+        <td class="num up">+$799<div class="sub">+0.4%</div></td>
+        <td class="num up">+0.3%</td>
+        <td class="num">18.1%</td>
+      </tr>
+      <tr>
+        <td><div class="tick">GEV </div><div class="name">GE Vernova</div><div class="thesis">AI-power leader with expectations reset after the Q2 miss; Q3 on Oct 28.</div><div class="exit">Exit if: GE Vernova closes below $950 before its Oct 28 report, or cuts orders or free-cash-flow guidance.</div></td>
+        <td class="num">$180,000</td>
+        <td class="num">996.67</td>
+        <td class="num">998.11</td>
+        <td class="num">$180,260</td>
+        <td class="num up">+$260<div class="sub">+0.1%</div></td>
+        <td class="num down">−0.7%</td>
+        <td class="num">18.1%</td>
+      </tr>
+      <tr>
+        <td><div class="tick">GS </div><div class="name">Goldman Sachs</div><div class="thesis">Washed-out bank into a low bar for Q3 on Oct 13; equities-trading leader.</div><div class="exit">Exit if: Goldman misses on equities trading or investment-banking fees on Oct 13, or the US 10-year yield rises above 5.4%.</div></td>
+        <td class="num">$180,000</td>
+        <td class="num">894.10</td>
+        <td class="num">889.71</td>
+        <td class="num">$179,116</td>
+        <td class="num down">−$884<div class="sub">−0.5%</div></td>
+        <td class="num down">−0.8%</td>
+        <td class="num">18.0%</td>
+      </tr>
+      <tr>
+        <td><div class="tick">COHR </div><div class="name">Coherent</div><div class="thesis">Same AI-optics demand as Lumentum&#x27;s sold-out-to-2029 call, at a lower multiple.</div><div class="exit">Exit if: Coherent guides below consensus, Lumentum warns on demand or pricing, or COHR closes more than 15% below entry.</div></td>
+        <td class="num">$180,000</td>
+        <td class="num">295.80</td>
+        <td class="num">285.33</td>
+        <td class="num">$173,632</td>
+        <td class="num down">−$6,368<div class="sub">−3.5%</div></td>
+        <td class="num down">−8.3%</td>
+        <td class="num">17.4%</td>
+      </tr>
+      <tr>
+        <td><div class="tick">DVN <span class="tag">team pick</span></div><div class="name">Devon Energy</div><div class="thesis"></div></td>
+        <td class="num">$80,000</td>
+        <td class="num">48.81</td>
+        <td class="num">49.07</td>
+        <td class="num">$80,418</td>
+        <td class="num up">+$418<div class="sub">+0.5%</div></td>
+        <td class="num up">+1.7%</td>
+        <td class="num">8.1%</td>
+      </tr>
+      <tr>
+        <td><div class="tick">SPCX <span class="tag">team pick</span></div><div class="name">SpaceX</div><div class="thesis"></div></td>
+        <td class="num">$20,000</td>
+        <td class="num">164.93</td>
+        <td class="num">164.40</td>
+        <td class="num">$19,936</td>
+        <td class="num down">−$64<div class="sub">−0.3%</div></td>
+        <td class="num up">+1.1%</td>
+        <td class="num">2.0%</td>
+      </tr></tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Book vs the world index</h2>
+    <p class="muted">The chart starts after the first full trading day.</p>
+  </section>
+
+  <footer>
+    Book as recorded 2026-10-12T10:41:00-04:00 from the team's reply (TMSG screenshots IMG_6855–6861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET). Fills are estimated at the next trade after each ticket, as TMSG fills them. Prices are Yahoo's, a few minutes delayed, and the world index is approximated by ACWI. TMSG is the official record; differences of a few dollars are expected.
+  </footer>
+</div></body></html>

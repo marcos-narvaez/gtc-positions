@@ -1,141 +1,384 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="300">
-<title>GTC Book</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>GTC Terminal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
 <style>
-:root { --bg:#fff; --fg:#16181c; --muted:#646a73; --rule:#dfe2e6; --accent:#1f5aa6; --up:#1b7f4b; --down:#b3261e; --sans:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace; }
-@media (prefers-color-scheme: dark) { :root { --bg:#111317; --fg:#e9ebee; --muted:#9aa1ab; --rule:#2e3238; --accent:#7fb0f0; --up:#5cc58d; --down:#f08a80; color-scheme:dark; } }
-* { box-sizing:border-box }
-body { margin:0; background:var(--bg); color:var(--fg); font-family:var(--sans); font-size:15px; line-height:1.5; font-variant-numeric:tabular-nums; }
-.page { max-width:1000px; margin:0 auto; padding:36px 18px 56px; display:grid; gap:32px; }
-.eyebrow { font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
-h1 { font-size:2rem; font-weight:600; margin:6px 0 4px; letter-spacing:-.01em; }
-.muted { color:var(--muted); }
-.tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); }
-.tile { background:var(--bg); padding:16px 18px; }
-.tile .k { font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
-.tile .v { font-size:1.65rem; font-weight:600; margin-top:4px; }
-.tile .s { font-size:13px; color:var(--muted); }
-.up { color:var(--up); } .down { color:var(--down); }
-h2 { font-size:1.1rem; font-weight:600; margin:0 0 10px; }
-.tablewrap { overflow-x:auto; }
-table { border-collapse:collapse; width:100%; min-width:760px; }
-th { text-align:right; font-family:var(--mono); font-weight:400; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--fg); padding:6px 0 6px 14px; white-space:nowrap; }
-th:first-child, td:first-child { text-align:left; padding-left:0; }
-td { border-bottom:1px solid var(--rule); padding:10px 0 10px 14px; vertical-align:top; }
-td.num { text-align:right; font-family:var(--mono); font-size:13.5px; white-space:nowrap; }
-.tick { font-weight:600; } .name { color:var(--muted); font-size:13px; }
-.thesis { font-size:13px; max-width:46ch; margin-top:2px; }
-.exit { font-size:12px; color:var(--muted); max-width:46ch; }
-.sub { font-size:12px; }
-.tag { font-family:var(--mono); font-size:10.5px; font-weight:400; color:var(--accent); border:1px solid currentColor; border-radius:3px; padding:0 4px; margin-left:4px; vertical-align:2px; }
-svg { display:block; width:100%; height:auto; font-family:var(--mono); }
-.grid { stroke:var(--rule); stroke-width:1; } .axis { font-size:11px; fill:var(--muted); }
-polyline { fill:none; stroke-width:2; } .book { stroke:var(--accent); } .bench { stroke:var(--muted); stroke-dasharray:4 4; }
-.legend { font-size:13px; color:var(--muted); display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
-.sw { display:inline-block; width:20px; height:2px; vertical-align:middle; } .sw.book { background:var(--accent); } .sw.bench { border-top:2px dashed var(--muted); height:0; }
-footer { font-size:12.5px; color:var(--muted); border-top:1px solid var(--rule); padding-top:14px; }
-</style></head>
-<body><div class="page">
-  <header>
-    <div class="eyebrow">Bloomberg Global Trading Challenge · GTC-2026 North America Group B</div>
-    <h1>Our book</h1>
-    <div class="muted">Updated Mon Oct 12, 2:10 PM ET · refreshes every 10 minutes in market hours</div>
-  </header>
+/* A trading terminal: one dark theme by design. Amber marks selection and headings, green/red mark direction,
+   blue is the team index. */
+:root {
+  --bg: #0a0c0f; --panel: #11141a; --panel2: #161a21; --line: #222831; --grid: #171b22;
+  --fg: #d9dde3; --muted: #7d8692; --amber: #ffa62b; --up: #2fbf71; --down: #f0524f; --team: #4ea1ff; --bench: #9aa3ad;
+  --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace; --sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box }
+html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+button:focus-visible { outline: 1px solid var(--amber); outline-offset: 1px; }
+.up { color: var(--up) } .down { color: var(--down) } .muted { color: var(--muted) } .amber { color: var(--amber) }
 
-  <section class="tiles">
-    <div class="tile"><div class="k">Book value</div><div class="v">$996,314</div><div class="s">started at $1,000,000</div></div>
-    <div class="tile"><div class="k">Since entry</div><div class="v down">−0.37%</div><div class="s">−$3,686</div></div>
-    <div class="tile"><div class="k">vs world index</div><div class="v down">−0.38%</div><div class="s">index +0.02% · how we are scored</div></div>
-    <div class="tile"><div class="k">Today</div><div class="v down">−$3,686</div><div class="s">cash $0</div></div>
+/* top bar */
+.bar { display: flex; flex-wrap: wrap; align-items: stretch; border-bottom: 1px solid var(--line); background: var(--panel); }
+.brand { padding: 10px 16px; font-weight: 600; letter-spacing: .06em; color: #0a0c0f; background: var(--amber); display: flex; align-items: center; gap: 8px; }
+.stat { padding: 8px 16px; border-right: 1px solid var(--line); display: grid; gap: 1px; min-width: 120px; }
+.stat .k { font-size: 10.5px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
+.stat .v { font-size: 15px; font-weight: 600; }
+.stat.right { margin-left: auto; border-right: 0; border-left: 1px solid var(--line); text-align: right; }
+
+/* layout */
+.grid { display: grid; grid-template-columns: 230px minmax(0, 1fr) 290px; min-height: calc(100vh - 52px); }
+@media (max-width: 1100px) { .grid { grid-template-columns: 200px minmax(0, 1fr); } .detail { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); } }
+@media (max-width: 720px) { .grid { grid-template-columns: minmax(0, 1fr); } .watch { border-right: 0; border-bottom: 1px solid var(--line); } .watch ul { display: flex; overflow-x: auto; } .watch li { min-width: 150px; border-right: 1px solid var(--line); } }
+
+.watch { border-right: 1px solid var(--line); background: var(--panel); }
+.panel-h { padding: 8px 12px; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; }
+.watch ul { list-style: none; margin: 0; padding: 0; }
+.watch li button { width: 100%; text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; }
+.watch li button:hover { background: var(--panel2); }
+.watch li button[aria-selected="true"] { background: #1d1a12; box-shadow: inset 3px 0 0 var(--amber); }
+.watch .t { font-weight: 600; } .watch .t small { font-weight: 400; color: var(--muted); margin-left: 6px; font-size: 10px; border: 1px solid var(--line); padding: 0 3px; }
+.watch .l { text-align: right; } .watch .n { color: var(--muted); font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .watch .c { text-align: right; font-size: 11.5px; }
+
+/* chart area */
+.main { display: flex; flex-direction: column; min-width: 0; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; padding: 8px 12px; border-bottom: 1px solid var(--line); background: var(--panel); }
+.sym { font-family: var(--sans); font-size: 16px; font-weight: 600; margin-right: 6px; }
+.sym small { font-weight: 400; color: var(--muted); font-size: 12.5px; margin-left: 6px; }
+.seg { display: inline-flex; border: 1px solid var(--line); }
+.seg button { padding: 4px 9px; border-right: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { color: #0a0c0f; background: var(--amber); }
+.seg button:disabled { opacity: .35; cursor: default; }
+.lbl { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.legend { padding: 6px 12px; display: flex; flex-wrap: wrap; gap: 4px 14px; border-bottom: 1px solid var(--line); min-height: 28px; font-size: 12px; }
+.legend b { font-weight: 500; color: var(--muted); margin-right: 3px; }
+.charts { flex: 1; display: flex; flex-direction: column; min-height: 520px; }
+.pane { position: relative; border-bottom: 1px solid var(--line); }
+.pane .tag { position: absolute; left: 8px; top: 4px; z-index: 3; font-size: 10.5px; color: var(--muted); letter-spacing: .06em; pointer-events: none; }
+#p-price { flex: 1 1 auto; min-height: 330px; }
+#p-vol { height: 90px; } #p-rsi { height: 100px; } #p-macd { height: 110px; } #p-spread { height: 110px; }
+.hidden { display: none !important; }
+.loading { padding: 40px; color: var(--muted); }
+
+/* detail */
+.detail { border-left: 1px solid var(--line); background: var(--panel); }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; padding: 12px; border-bottom: 1px solid var(--line); }
+.kv .k { color: var(--muted); } .kv .v { text-align: right; }
+.prose { padding: 12px; font-family: var(--sans); font-size: 13px; line-height: 1.5; border-bottom: 1px solid var(--line); }
+.prose .lbl { display: block; margin-bottom: 4px; font-family: var(--mono); }
+
+/* table */
+.tablewrap { overflow-x: auto; border-top: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; min-width: 760px; }
+th { text-align: right; font-weight: 400; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--amber); padding: 8px 12px; border-bottom: 1px solid var(--line); background: var(--panel); }
+td { text-align: right; padding: 7px 12px; border-bottom: 1px solid var(--grid); }
+th:first-child, td:first-child { text-align: left; }
+tr:hover td { background: var(--panel); cursor: pointer; }
+footer { padding: 12px 16px; color: var(--muted); font-family: var(--sans); font-size: 12px; border-top: 1px solid var(--line); }
+footer a { color: var(--muted); }
+kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line); padding: 0 4px; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="brand">GTC <span style="font-weight:400">TERMINAL</span></div>
+  <div class="stat"><span class="k">Book value</span><span class="v" id="s-value">–</span></div>
+  <div class="stat"><span class="k">Since entry</span><span class="v" id="s-ret">–</span></div>
+  <div class="stat"><span class="k">vs world index</span><span class="v" id="s-rel">–</span></div>
+  <div class="stat"><span class="k">Today</span><span class="v" id="s-day">–</span></div>
+  <div class="stat right"><span class="k" id="s-net">–</span><span class="v" id="s-time" style="font-weight:400;font-size:13px">–</span></div>
+</header>
+
+<div class="grid">
+  <aside class="watch">
+    <div class="panel-h"><span>Book</span><span class="muted">last · today · P&amp;L</span></div>
+    <ul id="watch"></ul>
+  </aside>
+
+  <section class="main">
+    <div class="toolbar">
+      <span class="sym" id="sym">–</span>
+      <span class="seg" id="tf" role="group" aria-label="Timeframe">
+        <button data-tf="1D">1D</button><button data-tf="5D">5D</button><button data-tf="1M">1M</button><button data-tf="3M">3M</button><button data-tf="6M">6M</button><button data-tf="1Y">1Y</button>
+      </span>
+      <span class="seg" id="type" role="group" aria-label="Chart type">
+        <button data-type="candle">Candles</button><button data-type="line">Line</button><button data-type="area">Area</button>
+      </span>
+      <span class="lbl">Studies</span>
+      <span class="seg" id="ov" role="group" aria-label="Overlays">
+        <button data-ov="sma20">SMA20</button><button data-ov="sma50">SMA50</button><button data-ov="sma200">SMA200</button><button data-ov="ema9">EMA9</button><button data-ov="bb">BB</button><button data-ov="vwap">VWAP</button>
+      </span>
+      <span class="seg" id="panes" role="group" aria-label="Panes">
+        <button data-pane="vol">VOL</button><button data-pane="rsi">RSI</button><button data-pane="macd">MACD</button>
+      </span>
+      <span class="seg" id="cmp" role="group" aria-label="Compare"><button data-cmp="acwi">vs ACWI</button></span>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="charts">
+      <div class="pane" id="p-price"></div>
+      <div class="pane" id="p-spread"><span class="tag">SPREAD vs INDEX (pts)</span></div>
+      <div class="pane" id="p-vol"><span class="tag">VOLUME</span></div>
+      <div class="pane" id="p-rsi"><span class="tag">RSI 14</span></div>
+      <div class="pane" id="p-macd"><span class="tag">MACD 12 26 9</span></div>
+    </div>
   </section>
 
-  <section>
-    <h2>Positions</h2>
-    <div class="tablewrap"><table>
-      <thead><tr><th>Name</th><th>Bought</th><th>Est. fill</th><th>Last</th><th>Value</th><th>P&amp;L</th><th>Today</th><th>Weight</th></tr></thead>
-      <tbody>
-      <tr>
-        <td><div class="tick">PENG </div><div class="name">Penguin Solutions</div><div class="thesis">Post-earnings drift after a record quarter and an FY27 EPS guide ~30% above consensus.</div><div class="exit">Exit if: Penguin closes below $72.61, cuts guidance, or announces an equity offering.</div></td>
-        <td class="num">$180,000</td>
-        <td class="num">77.72</td>
-        <td class="num">78.84</td>
-        <td class="num">$182,594</td>
-        <td class="num up">+$2,594<div class="sub">+1.4%</div></td>
-        <td class="num up">+3.4%</td>
-        <td class="num">18.3%</td>
-      </tr>
-      <tr>
-        <td><div class="tick">HUM </div><div class="name">Humana</div><div class="thesis">Post-event drift after the 2027 star-ratings blowout; brokers raising targets (Raymond James upgrade Oct 12).</div><div class="exit">Exit if: Humana closes below $410, CMS recalculates or corrects the 2027 star ratings, or UnitedHealth reports a medical-cost or utilization spike on Oct 13.</div></td>
-        <td class="num">$180,000</td>
-        <td class="num">431.25</td>
-        <td class="num">432.78</td>
-        <td class="num">$180,639</td>
-        <td class="num up">+$639<div class="sub">+0.4%</div></td>
-        <td class="num up">+0.2%</td>
-        <td class="num">18.1%</td>
-      </tr>
-      <tr>
-        <td><div class="tick">GEV </div><div class="name">GE Vernova</div><div class="thesis">AI-power leader with expectations reset after the Q2 miss; Q3 on Oct 28.</div><div class="exit">Exit if: GE Vernova closes below $950 before its Oct 28 report, or cuts orders or free-cash-flow guidance.</div></td>
-        <td class="num">$180,000</td>
-        <td class="num">996.67</td>
-        <td class="num">998.16</td>
-        <td class="num">$180,270</td>
-        <td class="num up">+$270<div class="sub">+0.1%</div></td>
-        <td class="num down">−0.7%</td>
-        <td class="num">18.1%</td>
-      </tr>
-      <tr>
-        <td><div class="tick">GS </div><div class="name">Goldman Sachs</div><div class="thesis">Washed-out bank into a low bar for Q3 on Oct 13; equities-trading leader.</div><div class="exit">Exit if: Goldman misses on equities trading or investment-banking fees on Oct 13, or the US 10-year yield rises above 5.4%.</div></td>
-        <td class="num">$180,000</td>
-        <td class="num">894.10</td>
-        <td class="num">889.54</td>
-        <td class="num">$179,082</td>
-        <td class="num down">−$918<div class="sub">−0.5%</div></td>
-        <td class="num down">−0.8%</td>
-        <td class="num">18.0%</td>
-      </tr>
-      <tr>
-        <td><div class="tick">COHR </div><div class="name">Coherent</div><div class="thesis">Same AI-optics demand as Lumentum&#x27;s sold-out-to-2029 call, at a lower multiple.</div><div class="exit">Exit if: Coherent guides below consensus, Lumentum warns on demand or pricing, or COHR closes more than 15% below entry.</div></td>
-        <td class="num">$180,000</td>
-        <td class="num">295.80</td>
-        <td class="num">284.86</td>
-        <td class="num">$173,343</td>
-        <td class="num down">−$6,657<div class="sub">−3.7%</div></td>
-        <td class="num down">−8.5%</td>
-        <td class="num">17.4%</td>
-      </tr>
-      <tr>
-        <td><div class="tick">DVN <span class="tag">team pick</span></div><div class="name">DVN</div><div class="thesis"></div></td>
-        <td class="num">$80,000</td>
-        <td class="num">48.81</td>
-        <td class="num">49.10</td>
-        <td class="num">$80,459</td>
-        <td class="num up">+$459<div class="sub">+0.6%</div></td>
-        <td class="num up">+1.7%</td>
-        <td class="num">8.1%</td>
-      </tr>
-      <tr>
-        <td><div class="tick">SPCX <span class="tag">team pick</span></div><div class="name">SPCX</div><div class="thesis"></div></td>
-        <td class="num">$20,000</td>
-        <td class="num">164.93</td>
-        <td class="num">164.34</td>
-        <td class="num">$19,928</td>
-        <td class="num down">−$72<div class="sub">−0.4%</div></td>
-        <td class="num up">+1.1%</td>
-        <td class="num">2.0%</td>
-      </tr></tbody>
-    </table></div>
-  </section>
+  <aside class="detail" id="detail"><div class="loading">Loading…</div></aside>
+</div>
 
-  <section>
-    <h2>Book vs the world index</h2>
-    <p class="muted">The chart starts after the first full trading day.</p>
-  </section>
+<div class="tablewrap">
+  <table>
+    <thead><tr><th>Position</th><th>Bought</th><th>Est. fill</th><th>Last</th><th>Value</th><th>P&amp;L</th><th>P&amp;L %</th><th>Today</th><th>Weight</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</div>
 
-  <footer>
-    Book as recorded 2026-10-12T10:41:00-04:00 from the team's reply (TMSG screenshots IMG_6855–6861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET). Fills are estimated at the next trade after each ticket, as TMSG fills them. Prices are Yahoo's, a few minutes delayed, and the world index is approximated by ACWI. TMSG is the official record; differences of a few dollars are expected.
-  </footer>
-</div></body></html>
+<footer>
+  Book from the team's TMSG tickets; fills estimated at the next trade after each ticket (TMSG's Next Tick rule). Prices from Yahoo, delayed a few minutes; the world index is approximated by ACWI. TMSG is the official record.
+  Keys: <kbd>↑</kbd><kbd>↓</kbd> symbol · <kbd>1</kbd>–<kbd>6</kbd> timeframe · <kbd>C</kbd> candles/line. <a href="summary.html">Plain summary</a>.
+</footer>
+
+<script>
+(() => {
+  const LWC = window.LightweightCharts;
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const C = { up: css('--up'), down: css('--down'), team: css('--team'), bench: css('--bench'), amber: css('--amber'), grid: css('--grid'), line: css('--line'), muted: css('--muted'), bg: css('--bg') };
+  const OV = { sma20: ['SMA20', '#e6c07b'], sma50: ['SMA50', '#c678dd'], sma200: ['SMA200', '#56b6c2'], ema9: ['EMA9', '#ff8a65'], bb: ['BB 20 2', '#7f8c9a'], vwap: ['VWAP', '#e5e5e5'] };
+  const TF_DAYS = { '1M': 31, '3M': 92, '6M': 183, '1Y': 366 };
+  const state = load({ sel: 'TEAM', tf: '5D', type: 'candle', ov: ['sma20', 'vwap'], panes: ['vol'], cmp: false });
+  if (/^#[A-Za-z]{1,6}$/.test(location.hash)) state.sel = location.hash.slice(1).toUpperCase();
+  let book = null, idx = null, cache = {}, charts = [];
+
+  function load(def) { try { return Object.assign(def, JSON.parse(localStorage.getItem('gtc-term') || '{}')); } catch { return def; } }
+  function save() { try { localStorage.setItem('gtc-term', JSON.stringify(state)); } catch {} }
+  const $ = id => document.getElementById(id);
+  const fmt = (x, d = 2) => x == null ? '–' : x.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+  const money = (x, signed) => x == null ? '–' : (signed && x > 0 ? '+' : x < 0 ? '−' : '') + '$' + Math.abs(Math.round(x)).toLocaleString('en-US');
+  const pct = (x, d = 2) => x == null ? '–' : (x > 0 ? '+' : x < 0 ? '−' : '') + Math.abs(x * 100).toFixed(d) + '%';
+  const cls = x => x == null || Math.abs(x) < 1e-12 ? '' : x > 0 ? 'up' : 'down';
+  const bust = () => '?t=' + Math.floor(Date.now() / 60000);
+
+  async function getJSON(path) { const r = await fetch(path + bust()); if (!r.ok) throw new Error(path + ' ' + r.status); return r.json(); }
+
+  // ---------- indicators ----------
+  const sma = (v, n) => v.map((_, i) => i < n - 1 ? null : v.slice(i - n + 1, i + 1).reduce((a, b) => a + b, 0) / n);
+  const ema = (v, n) => { const k = 2 / (n + 1); let e = null; return v.map((x, i) => { if (x == null) return null; e = e == null ? x : x * k + e * (1 - k); return i < n - 1 ? null : e; }); };
+  function bb(v, n = 20, m = 2) { const mid = sma(v, n); return mid.map((md, i) => { if (md == null) return [null, null, null]; const w = v.slice(i - n + 1, i + 1); const sd = Math.sqrt(w.reduce((a, x) => a + (x - md) ** 2, 0) / n); return [md + m * sd, md, md - m * sd]; }); }
+  function rsi(v, n = 14) { const out = Array(v.length).fill(null); let g = 0, l = 0; for (let i = 1; i < v.length; i++) { const d = v[i] - v[i - 1]; const up = Math.max(d, 0), dn = Math.max(-d, 0); if (i <= n) { g += up; l += dn; if (i === n) { g /= n; l /= n; out[i] = l === 0 ? 100 : 100 - 100 / (1 + g / l); } } else { g = (g * (n - 1) + up) / n; l = (l * (n - 1) + dn) / n; out[i] = l === 0 ? 100 : 100 - 100 / (1 + g / l); } } return out; }
+  function macd(v) { const a = ema(v, 12), b = ema(v, 26); const line = v.map((_, i) => a[i] != null && b[i] != null ? a[i] - b[i] : null); const firstIdx = line.findIndex(x => x != null); const sig = Array(v.length).fill(null); if (firstIdx >= 0) { const s = ema(line.slice(firstIdx), 9); s.forEach((x, j) => sig[firstIdx + j] = x); } return line.map((m, i) => [m, sig[i], m != null && sig[i] != null ? m - sig[i] : null]); }
+  function vwap(bars, intraday) { if (!intraday) return bars.map(() => null); let pv = 0, vv = 0, day = null; return bars.map(b => { const d = new Date(b.time * 1000).toISOString().slice(0, 10); if (d !== day) { day = d; pv = 0; vv = 0; } const tp = (b.high + b.low + b.close) / 3; pv += tp * b.volume; vv += b.volume; return vv ? pv / vv : null; }); }
+
+  // ---------- data shaping ----------
+  function slice(raw, tf) {
+    if (tf === '1D' || tf === '5D') {
+      let rows = raw.i || [];
+      if (tf === '1D' && rows.length) { const last = new Date(rows[rows.length - 1][0] * 1000).toISOString().slice(0, 10); rows = rows.filter(r => new Date(r[0] * 1000).toISOString().slice(0, 10) === last); }
+      return { intraday: true, rows };
+    }
+    const rows = raw.d || []; if (!rows.length) return { intraday: false, rows };
+    const end = new Date(rows[rows.length - 1][0]); const start = new Date(end - TF_DAYS[tf] * 864e5).toISOString().slice(0, 10);
+    // keep 200 extra bars before the window so long averages are warmed up, then trim for display
+    const firstIn = rows.findIndex(r => r[0] >= start);
+    return { intraday: false, rows: rows.slice(Math.max(0, firstIn - 200)), showFrom: rows[firstIn] ? rows[firstIn][0] : null };
+  }
+  const toBars = rows => rows.map(r => ({ time: r[0], open: r[1], high: r[2], low: r[3], close: r[4], volume: r[5] }));
+  const lineData = (bars, vals) => bars.map((b, i) => vals[i] == null ? { time: b.time } : { time: b.time, value: vals[i] });
+
+  // ---------- charts ----------
+  function mk(el, opts = {}) {
+    const c = LWC.createChart(el, Object.assign({
+      autoSize: true,
+      layout: { background: { type: 'solid', color: C.bg }, textColor: C.muted, fontFamily: "'IBM Plex Mono', monospace", fontSize: 11 },
+      grid: { vertLines: { color: C.grid }, horzLines: { color: C.grid } },
+      rightPriceScale: { borderColor: C.line },
+      timeScale: { borderColor: C.line, timeVisible: true, secondsVisible: false, rightOffset: 4 },
+      crosshair: { mode: LWC.CrosshairMode.Normal, vertLine: { color: '#5c6370', labelBackgroundColor: '#2a2f38' }, horzLine: { color: '#5c6370', labelBackgroundColor: '#2a2f38' } },
+    }, opts));
+    charts.push(c); return c;
+  }
+  function clearCharts() { charts.forEach(c => c.remove()); charts = []; }
+  function sync(main, others) {
+    main.timeScale().subscribeVisibleLogicalRangeChange(r => { if (r) others.forEach(o => o.chart.timeScale().setVisibleLogicalRange(r)); });
+    others.forEach(o => o.chart.timeScale().subscribeVisibleLogicalRangeChange(r => { if (r) main.timeScale().setVisibleLogicalRange(r); }));
+    main.subscribeCrosshairMove(p => others.forEach(o => { if (!p.time || !o.series) { o.chart.clearCrosshairPosition && o.chart.clearCrosshairPosition(); return; } try { o.chart.setCrosshairPosition(0, p.time, o.series); } catch {} }));
+  }
+  function showPanes(names) { ['spread', 'vol', 'rsi', 'macd'].forEach(n => $('p-' + n).classList.toggle('hidden', !names.includes(n))); }
+
+  async function drawStock(row) {
+    const raw = cache[row.yahoo] || (cache[row.yahoo] = await getJSON('data/' + row.yahoo + '.json'));
+    const { intraday, rows, showFrom } = slice(raw, state.tf);
+    clearCharts();
+    showPanes(state.panes.filter(p => p !== 'spread'));
+    if (!rows.length) { $('legend').textContent = 'No data for this timeframe yet.'; return; }
+    const bars = toBars(rows), closes = bars.map(b => b.close);
+    const price = mk($('p-price'), { rightPriceScale: { borderColor: C.line, mode: state.cmp ? LWC.PriceScaleMode.Percentage : LWC.PriceScaleMode.Normal } });
+    let main;
+    if (state.type === 'candle') main = price.addCandlestickSeries({ upColor: C.up, downColor: C.down, borderVisible: false, wickUpColor: C.up, wickDownColor: C.down });
+    else if (state.type === 'area') main = price.addAreaSeries({ lineColor: C.amber, topColor: 'rgba(255,166,43,.25)', bottomColor: 'rgba(255,166,43,0)', lineWidth: 2 });
+    else main = price.addLineSeries({ color: C.amber, lineWidth: 2 });
+    main.setData(state.type === 'candle' ? bars : bars.map(b => ({ time: b.time, value: b.close })));
+
+    const legendExtra = [];
+    for (const k of state.ov) {
+      if (k === 'vwap' && !intraday) continue;
+      const [label, color] = OV[k];
+      if (k === 'bb') { const b = bb(closes); ['upper', 'mid', 'lower'].forEach((nm, j) => { const s = price.addLineSeries({ color, lineWidth: 1, lineStyle: j === 1 ? 2 : 0, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false }); s.setData(lineData(bars, b.map(x => x[j]))); }); legendExtra.push([label, color, null]); continue; }
+      const vals = k === 'vwap' ? vwap(bars, intraday) : k === 'ema9' ? ema(closes, 9) : sma(closes, +k.slice(3));
+      const s = price.addLineSeries({ color, lineWidth: 1.5, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false });
+      s.setData(lineData(bars, vals)); legendExtra.push([label, color, vals]);
+    }
+    if (state.cmp && cache.ACWI !== false) {
+      const b = cache.ACWI || (cache.ACWI = await getJSON('data/ACWI.json').catch(() => false));
+      if (b) { const bs = slice(b, state.tf).rows; const s = price.addLineSeries({ color: C.bench, lineWidth: 1.5, lineStyle: 2, priceLineVisible: false, title: 'ACWI' }); s.setData(bs.map(r => ({ time: r[0], value: r[4] }))); }
+    }
+    if (raw.entry && raw.entry.price) {
+      main.createPriceLine({ price: raw.entry.price, color: C.amber, lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: 'ENTRY' });
+      const t = intraday ? bars.find(b => b.time >= raw.entry.time) : bars.find(b => b.time >= raw.entry.date);
+      if (t) main.setMarkers([{ time: t.time, position: 'belowBar', color: C.amber, shape: 'arrowUp', text: 'BUY' }]);
+    }
+
+    const others = [];
+    if (state.panes.includes('vol')) { const c = mk($('p-vol'), { timeScale: { visible: false } }); const s = c.addHistogramSeries({ priceFormat: { type: 'volume' }, priceLineVisible: false, lastValueVisible: false }); s.setData(bars.map((b, i) => ({ time: b.time, value: b.volume, color: (i && b.close < bars[i - 1].close) || b.close < b.open ? 'rgba(240,82,79,.55)' : 'rgba(47,191,113,.55)' }))); others.push({ chart: c, series: s }); }
+    if (state.panes.includes('rsi')) { const c = mk($('p-rsi'), { timeScale: { visible: false } }); const s = c.addLineSeries({ color: '#c678dd', lineWidth: 1.5, priceLineVisible: false }); s.setData(lineData(bars, rsi(closes))); [70, 30].forEach(v => s.createPriceLine({ price: v, color: '#3a404b', lineWidth: 1, lineStyle: 2, axisLabelVisible: false })); others.push({ chart: c, series: s }); }
+    if (state.panes.includes('macd')) { const c = mk($('p-macd'), { timeScale: { visible: false } }); const m = macd(closes); const h = c.addHistogramSeries({ priceLineVisible: false, lastValueVisible: false }); h.setData(bars.map((b, i) => m[i][2] == null ? { time: b.time } : { time: b.time, value: m[i][2], color: m[i][2] >= 0 ? 'rgba(47,191,113,.6)' : 'rgba(240,82,79,.6)' })); const l = c.addLineSeries({ color: '#4ea1ff', lineWidth: 1.5, priceLineVisible: false, lastValueVisible: false }); l.setData(lineData(bars, m.map(x => x[0]))); const sg = c.addLineSeries({ color: '#ffa62b', lineWidth: 1.2, priceLineVisible: false, lastValueVisible: false }); sg.setData(lineData(bars, m.map(x => x[1]))); others.push({ chart: c, series: l }); }
+    // the bottom pane carries the time axis
+    if (others.length) { price.applyOptions({ timeScale: { visible: false } }); others[others.length - 1].chart.applyOptions({ timeScale: { visible: true, borderColor: C.line, timeVisible: true } }); }
+    sync(price, others);
+    if (showFrom) { const i = bars.findIndex(b => b.time >= showFrom); price.timeScale().setVisibleLogicalRange({ from: i, to: bars.length + 3 }); } else price.timeScale().fitContent();
+
+    const legend = p => {
+      const b = p && p.time ? bars.find(x => x.time === p.time) : bars[bars.length - 1];
+      if (!b) return;
+      const i = bars.indexOf(b), prev = i > 0 ? bars[i - 1].close : b.open, ch = b.close / prev - 1;
+      $('legend').innerHTML = `<span><b>O</b>${fmt(b.open)}</span><span><b>H</b>${fmt(b.high)}</span><span><b>L</b>${fmt(b.low)}</span><span><b>C</b>${fmt(b.close)}</span><span class="${cls(ch)}">${pct(ch)}</span><span><b>V</b>${b.volume.toLocaleString('en-US')}</span>` +
+        legendExtra.map(([lab, col, vals]) => `<span style="color:${col}"><b style="color:${col}">${lab}</b>${vals && vals[i] != null ? fmt(vals[i]) : ''}</span>`).join('');
+    };
+    price.subscribeCrosshairMove(legend); legend();
+  }
+
+  async function drawTeam() {
+    clearCharts();
+    showPanes(['spread']);
+    const intraday = state.tf === '1D' || state.tf === '5D';
+    let rows = intraday ? idx.i : idx.d;
+    if (state.tf === '1D' && rows.length) { const last = new Date(rows[rows.length - 1][0] * 1000).toISOString().slice(0, 10); rows = rows.filter(r => new Date(r[0] * 1000).toISOString().slice(0, 10) === last); }
+    if (!rows.length) { $('legend').textContent = 'The team index starts at inception; daily bars appear after the first close.'; return; }
+    const price = mk($('p-price'));
+    const s = state.type === 'line' ? price.addLineSeries({ color: C.team, lineWidth: 2, title: 'TEAM' }) : price.addAreaSeries({ lineColor: C.team, topColor: 'rgba(78,161,255,.22)', bottomColor: 'rgba(78,161,255,0)', lineWidth: 2, title: 'TEAM' });
+    s.setData(rows.map(r => ({ time: r[0], value: r[1] })));
+    const b = price.addLineSeries({ color: C.bench, lineWidth: 1.5, lineStyle: 2, title: 'ACWI', priceLineVisible: false });
+    b.setData(rows.filter(r => r[2] != null).map(r => ({ time: r[0], value: r[2] })));
+    s.createPriceLine({ price: 100, color: '#3a404b', lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: 'START' });
+    const sc = mk($('p-spread'));
+    const sp = sc.addHistogramSeries({ priceLineVisible: false });
+    sp.setData(rows.map(r => r[2] == null ? { time: r[0] } : { time: r[0], value: +(r[1] - r[2]).toFixed(3), color: r[1] >= r[2] ? 'rgba(47,191,113,.65)' : 'rgba(240,82,79,.65)' }));
+    price.applyOptions({ timeScale: { visible: false } });
+    sync(price, [{ chart: sc, series: sp }]);
+    price.timeScale().fitContent();
+    const legend = p => {
+      const r = p && p.time ? rows.find(x => x[0] === p.time) : rows[rows.length - 1];
+      if (!r) return;
+      $('legend').innerHTML = `<span style="color:${C.team}"><b style="color:${C.team}">TEAM</b>${fmt(r[1])}</span><span><b>ACWI</b>${r[2] != null ? fmt(r[2]) : '–'}</span><span class="${cls(r[2] != null ? r[1] - r[2] : null)}"><b>SPREAD</b>${r[2] != null ? (r[1] - r[2] >= 0 ? '+' : '') + (r[1] - r[2]).toFixed(2) + ' pts' : '–'}</span>`;
+    };
+    price.subscribeCrosshairMove(legend); legend();
+  }
+
+  // ---------- panels ----------
+  function renderTop() {
+    $('s-value').textContent = money(book.value);
+    $('s-ret').innerHTML = `<span class="${cls(book.book_ret)}">${pct(book.book_ret)}</span>`;
+    $('s-rel').innerHTML = `<span class="${cls(book.relative)}">${pct(book.relative)}</span>`;
+    $('s-day').innerHTML = `<span class="${cls(book.day_pnl)}">${money(book.day_pnl, true)}</span>`;
+    $('s-net').textContent = book.network || 'GTC 2026';
+    $('s-time').textContent = 'Updated ' + new Date(book.generated).toLocaleString('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: '2-digit' }) + ' ET';
+  }
+  function renderWatch() {
+    const lastIdx = idx.i.length ? idx.i[idx.i.length - 1] : idx.d[idx.d.length - 1];
+    const items = [{ key: 'TEAM', t: 'TEAM INDEX', n: 'our book, 100 = start', l: lastIdx ? fmt(lastIdx[1]) : '–', c: book.relative, c2: `vs ACWI ${pct(book.relative)}` }]
+      .concat(book.rows.map(r => ({ key: r.ticker, t: r.ticker + (r.origin === 'team' ? '<small>TEAM</small>' : ''), n: r.name, l: fmt(r.last), c: r.day_pct, c2: `<span class="${cls(r.day_pct)}">${pct(r.day_pct)}</span> · <span class="${cls(r.pnl_pct)}">${pct(r.pnl_pct, 1)}</span>` })));
+    $('watch').innerHTML = items.map(it => `<li><button data-key="${it.key}" aria-selected="${state.sel === it.key}"><span class="t">${it.t}</span><span class="l">${it.l}</span><span class="n">${it.n}</span><span class="c">${it.c2}</span></button></li>`).join('');
+  }
+  function renderRows() {
+    $('rows').innerHTML = book.rows.map(r => `<tr data-key="${r.ticker}"><td><b>${r.ticker}</b> <span class="muted">${r.name}</span></td><td>${money(r.notional)}</td><td>${fmt(r.entry)}</td><td>${fmt(r.last)}</td><td>${money(r.value)}</td><td class="${cls(r.pnl)}">${money(r.pnl, true)}</td><td class="${cls(r.pnl_pct)}">${pct(r.pnl_pct)}</td><td class="${cls(r.day_pct)}">${pct(r.day_pct)}</td><td>${pct(r.weight, 1).replace('+', '')}</td></tr>`).join('');
+  }
+  function renderDetail() {
+    if (state.sel === 'TEAM') {
+      const last = (idx.i.length ? idx.i : idx.d).slice(-1)[0];
+      $('detail').innerHTML = `<div class="panel-h"><span>Team index</span><span class="muted">100 = ${money(idx.start_value)}</span></div>
+        <div class="kv"><span class="k">Index</span><span class="v">${last ? fmt(last[1]) : '–'}</span><span class="k">ACWI (same start)</span><span class="v">${last && last[2] != null ? fmt(last[2]) : '–'}</span>
+        <span class="k">Spread</span><span class="v ${cls(book.relative)}">${pct(book.relative)}</span><span class="k">Book value</span><span class="v">${money(book.value)}</span>
+        <span class="k">P&amp;L since entry</span><span class="v ${cls(book.value - book.start_value)}">${money(book.value - book.start_value, true)}</span><span class="k">Cash</span><span class="v">${money(book.cash)}</span>
+        <span class="k">Positions</span><span class="v">${book.rows.length}</span></div>
+        <div class="prose"><span class="lbl">How we are scored</span>Return relative to the Bloomberg World index, approximated here by ACWI. The spread pane shows how far ahead or behind we are, in index points.</div>`;
+      return;
+    }
+    const r = book.rows.find(x => x.ticker === state.sel); if (!r) return;
+    const entered = new Date(r.entered).toLocaleString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+    $('detail').innerHTML = `<div class="panel-h"><span>${r.ticker} · ${r.origin === 'team' ? 'team pick' : 'desk pick'}</span><span class="muted">${r.bloomberg}</span></div>
+      <div class="kv"><span class="k">Bought</span><span class="v">${money(r.notional)}</span><span class="k">Entered</span><span class="v">${entered} ET</span>
+      <span class="k">Est. fill</span><span class="v">${fmt(r.entry)}</span><span class="k">Shares (est.)</span><span class="v">${fmt(r.shares, 1)}</span>
+      <span class="k">Last</span><span class="v">${fmt(r.last)}</span><span class="k">Value</span><span class="v">${money(r.value)}</span>
+      <span class="k">P&amp;L</span><span class="v ${cls(r.pnl)}">${money(r.pnl, true)} · ${pct(r.pnl_pct)}</span><span class="k">Today</span><span class="v ${cls(r.day_pct)}">${pct(r.day_pct)}</span>
+      <span class="k">Weight</span><span class="v">${pct(r.weight, 1).replace('+', '')}</span></div>
+      ${r.thesis ? `<div class="prose"><span class="lbl">Thesis</span>${esc(r.thesis)}</div>` : ''}
+      ${r.exit ? `<div class="prose"><span class="lbl">Exit if</span>${esc(r.exit)}</div>` : ''}`;
+  }
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  function syncControls() {
+    const isTeam = state.sel === 'TEAM';
+    document.querySelectorAll('#tf button').forEach(b => b.setAttribute('aria-pressed', b.dataset.tf === state.tf));
+    document.querySelectorAll('#type button').forEach(b => { b.setAttribute('aria-pressed', b.dataset.type === state.type); b.disabled = isTeam && b.dataset.type === 'candle'; });
+    document.querySelectorAll('#ov button').forEach(b => { b.setAttribute('aria-pressed', state.ov.includes(b.dataset.ov)); b.disabled = isTeam; });
+    document.querySelectorAll('#panes button').forEach(b => { b.setAttribute('aria-pressed', state.panes.includes(b.dataset.pane)); b.disabled = isTeam; });
+    document.querySelectorAll('#cmp button').forEach(b => { b.setAttribute('aria-pressed', state.cmp); b.disabled = isTeam; });
+    const r = book && book.rows.find(x => x.ticker === state.sel);
+    $('sym').innerHTML = isTeam ? 'TEAM INDEX<small>vs ACWI</small>' : `${state.sel} US<small>${r ? esc(r.name) : ''}</small>`;
+  }
+
+  async function draw() {
+    save(); try { history.replaceState(null, '', '#' + state.sel); } catch {} syncControls(); renderWatch(); renderDetail();
+    try { if (state.sel === 'TEAM') { if (state.type === 'candle') state.type = 'area'; syncControls(); await drawTeam(); } else { const r = book.rows.find(x => x.ticker === state.sel); if (r) await drawStock(r); } }
+    catch (e) { $('legend').textContent = 'Could not load chart data: ' + e.message; }
+  }
+
+  function toggle(list, v) { const i = list.indexOf(v); i >= 0 ? list.splice(i, 1) : list.push(v); }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('button, tr[data-key]'); if (!b) return;
+    if (b.dataset.key) { state.sel = b.dataset.key; return draw(); }
+    if (b.dataset.tf) { state.tf = b.dataset.tf; return draw(); }
+    if (b.dataset.type && !b.disabled) { state.type = b.dataset.type; return draw(); }
+    if (b.dataset.ov && !b.disabled) { toggle(state.ov, b.dataset.ov); return draw(); }
+    if (b.dataset.pane && !b.disabled) { toggle(state.panes, b.dataset.pane); return draw(); }
+    if (b.dataset.cmp && !b.disabled) { state.cmp = !state.cmp; return draw(); }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.target.closest('input, textarea')) return;
+    const keys = ['TEAM'].concat(book ? book.rows.map(r => r.ticker) : []);
+    const tfs = ['1D', '5D', '1M', '3M', '6M', '1Y'];
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); const i = keys.indexOf(state.sel); state.sel = keys[(i + (e.key === 'ArrowDown' ? 1 : keys.length - 1)) % keys.length]; draw(); }
+    else if (/^[1-6]$/.test(e.key)) { state.tf = tfs[+e.key - 1]; draw(); }
+    else if (e.key.toLowerCase() === 'c' && state.sel !== 'TEAM') { state.type = state.type === 'candle' ? 'line' : 'candle'; draw(); }
+  });
+
+  async function refresh(first) {
+    try {
+      [book, idx] = await Promise.all([getJSON('data/_book.json'), getJSON('data/_index.json')]);
+      if (!first) cache = {};
+      if (state.sel !== 'TEAM' && !book.rows.some(r => r.ticker === state.sel)) state.sel = 'TEAM';
+      renderTop(); renderRows(); await draw();
+    } catch (e) { $('detail').innerHTML = `<div class="loading">Could not load data (${esc(e.message)}). The page retries in five minutes.</div>`; }
+  }
+  if (!LWC) { $('legend').textContent = 'The charting library did not load; check your connection.'; }
+  refresh(true);
+  setInterval(() => refresh(false), 5 * 60 * 1000);
+})();
+</script>
+</body>
+</html>
