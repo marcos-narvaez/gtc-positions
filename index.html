@@ -439,7 +439,7 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
     await loadPrevCloses();
     connect();
     setInterval(() => { applyLive(); if (live.ws && live.at) setLiveStatus('connected'); }, 1000);  // repaint at most once a second
-    setInterval(loadPrevCloses, 10 * 60 * 1000);
+    setInterval(loadPrevCloses, 60 * 1000);  // the free stream is sparse; a 1-minute quote keeps quiet names current
   }
 
   if (!LWC) { $('legend').textContent = 'The charting library did not load; check your connection.'; }
