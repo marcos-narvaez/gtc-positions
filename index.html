@@ -92,6 +92,7 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
   <div class="stat"><span class="k">Since entry</span><span class="v" id="s-ret">–</span></div>
   <div class="stat"><span class="k">vs world index</span><span class="v" id="s-rel">–</span></div>
   <div class="stat"><span class="k">Today</span><span class="v" id="s-day">–</span></div>
+  <div class="stat" id="s-live-wrap" hidden><span class="k">Live</span><span class="v" id="s-live" style="font-weight:400;font-size:13px">–</span></div>
   <div class="stat right"><span class="k" id="s-net">–</span><span class="v" id="s-time" style="font-weight:400;font-size:13px">–</span></div>
 </header>
 
@@ -134,13 +135,13 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
 
 <div class="tablewrap">
   <table>
-    <thead><tr><th>Position</th><th>Bought</th><th>Est. fill</th><th>Last</th><th>Value</th><th>P&amp;L</th><th>P&amp;L %</th><th>Today</th><th>Weight</th></tr></thead>
+    <thead><tr><th>Position</th><th>Bought</th><th>Est. fill</th><th>Last</th><th>Value</th><th>P&amp;L</th><th>P&amp;L %</th><th>Today</th><th>Weight</th><th>Stop</th></tr></thead>
     <tbody id="rows"></tbody>
   </table>
 </div>
 
 <footer>
-  Book from the team's TMSG tickets; fills estimated at the next trade after each ticket (TMSG's Next Tick rule). Prices from Yahoo, delayed a few minutes; the world index is approximated by ACWI. TMSG is the official record.
+  Book from the team's TMSG tickets; fills estimated at the next trade after each ticket (TMSG's Next Tick rule). Prices from Yahoo, delayed a few minutes, refreshed by the lab every 10 minutes; when the Live box shows a time, prices update every 15 seconds from Finnhub. The world index is approximated by ACWI. TMSG is the official record.
   Keys: <kbd>↑</kbd><kbd>↓</kbd> symbol · <kbd>1</kbd>–<kbd>6</kbd> timeframe · <kbd>C</kbd> candles/line. <a href="summary.html">Plain summary</a>.
 </footer>
 
@@ -153,7 +154,7 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
   const TF_DAYS = { '1M': 31, '3M': 92, '6M': 183, '1Y': 366 };
   const state = load({ sel: 'TEAM', tf: '5D', type: 'candle', ov: ['sma20', 'vwap'], panes: ['vol'], cmp: false });
   if (/^#[A-Za-z]{1,6}$/.test(location.hash)) state.sel = location.hash.slice(1).toUpperCase();
-  let book = null, idx = null, cache = {}, charts = [];
+  let book = null, idx = null, cache = {}, charts = [], liveRef = null, liveCfg = null, liveTimer = null;
 
   function load(def) { try { return Object.assign(def, JSON.parse(localStorage.getItem('gtc-term') || '{}')); } catch { return def; } }
   function save() { try { localStorage.setItem('gtc-term', JSON.stringify(state)); } catch {} }
@@ -202,7 +203,7 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
     }, opts));
     charts.push(c); return c;
   }
-  function clearCharts() { charts.forEach(c => c.remove()); charts = []; }
+  function clearCharts() { charts.forEach(c => c.remove()); charts = []; liveRef = null; }
   function sync(main, others) {
     main.timeScale().subscribeVisibleLogicalRangeChange(r => { if (r) others.forEach(o => o.chart.timeScale().setVisibleLogicalRange(r)); });
     others.forEach(o => o.chart.timeScale().subscribeVisibleLogicalRangeChange(r => { if (r) main.timeScale().setVisibleLogicalRange(r); }));
@@ -223,6 +224,7 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
     else if (state.type === 'area') main = price.addAreaSeries({ lineColor: C.amber, topColor: 'rgba(255,166,43,.25)', bottomColor: 'rgba(255,166,43,0)', lineWidth: 2 });
     else main = price.addLineSeries({ color: C.amber, lineWidth: 2 });
     main.setData(state.type === 'candle' ? bars : bars.map(b => ({ time: b.time, value: b.close })));
+    liveRef = intraday ? { kind: 'stock', sym: row.yahoo, series: main, last: Object.assign({}, bars[bars.length - 1]), candle: state.type === 'candle' } : null;
 
     const legendExtra = [];
     for (const k of state.ov) {
@@ -239,6 +241,7 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
     }
     if (raw.entry && raw.entry.price) {
       main.createPriceLine({ price: raw.entry.price, color: C.amber, lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: 'ENTRY' });
+      if (raw.stop) main.createPriceLine({ price: raw.stop, color: C.down, lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: 'STOP' });
       const t = intraday ? bars.find(b => b.time >= raw.entry.time) : bars.find(b => b.time >= raw.entry.date);
       if (t) main.setMarkers([{ time: t.time, position: 'belowBar', color: C.amber, shape: 'arrowUp', text: 'BUY' }]);
     }
@@ -272,6 +275,7 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
     const price = mk($('p-price'));
     const s = state.type === 'line' ? price.addLineSeries({ color: C.team, lineWidth: 2, title: 'TEAM' }) : price.addAreaSeries({ lineColor: C.team, topColor: 'rgba(78,161,255,.22)', bottomColor: 'rgba(78,161,255,0)', lineWidth: 2, title: 'TEAM' });
     s.setData(rows.map(r => ({ time: r[0], value: r[1] })));
+    liveRef = intraday ? { kind: 'team', series: s, time: rows[rows.length - 1][0] } : null;
     const b = price.addLineSeries({ color: C.bench, lineWidth: 1.5, lineStyle: 2, title: 'ACWI', priceLineVisible: false });
     b.setData(rows.filter(r => r[2] != null).map(r => ({ time: r[0], value: r[2] })));
     s.createPriceLine({ price: 100, color: '#3a404b', lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: 'START' });
@@ -305,7 +309,7 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
     $('watch').innerHTML = items.map(it => `<li><button data-key="${it.key}" aria-selected="${state.sel === it.key}"><span class="t">${it.t}</span><span class="l">${it.l}</span><span class="n">${it.n}</span><span class="c">${it.c2}</span></button></li>`).join('');
   }
   function renderRows() {
-    $('rows').innerHTML = book.rows.map(r => `<tr data-key="${r.ticker}"><td><b>${r.ticker}</b> <span class="muted">${r.name}</span></td><td>${money(r.notional)}</td><td>${fmt(r.entry)}</td><td>${fmt(r.last)}</td><td>${money(r.value)}</td><td class="${cls(r.pnl)}">${money(r.pnl, true)}</td><td class="${cls(r.pnl_pct)}">${pct(r.pnl_pct)}</td><td class="${cls(r.day_pct)}">${pct(r.day_pct)}</td><td>${pct(r.weight, 1).replace('+', '')}</td></tr>`).join('');
+    $('rows').innerHTML = book.rows.map(r => `<tr data-key="${r.ticker}"><td><b>${r.ticker}</b> <span class="muted">${r.name}</span></td><td>${money(r.notional)}</td><td>${fmt(r.entry)}</td><td>${fmt(r.last)}</td><td>${money(r.value)}</td><td class="${cls(r.pnl)}">${money(r.pnl, true)}</td><td class="${cls(r.pnl_pct)}">${pct(r.pnl_pct)}</td><td class="${cls(r.day_pct)}">${pct(r.day_pct)}</td><td>${pct(r.weight, 1).replace('+', '')}</td><td class="down">${r.stop ? fmt(r.stop) : '–'}</td></tr>`).join('');
   }
   function renderDetail() {
     if (state.sel === 'TEAM') {
@@ -325,7 +329,9 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
       <span class="k">Est. fill</span><span class="v">${fmt(r.entry)}</span><span class="k">Shares (est.)</span><span class="v">${fmt(r.shares, 1)}</span>
       <span class="k">Last</span><span class="v">${fmt(r.last)}</span><span class="k">Value</span><span class="v">${money(r.value)}</span>
       <span class="k">P&amp;L</span><span class="v ${cls(r.pnl)}">${money(r.pnl, true)} · ${pct(r.pnl_pct)}</span><span class="k">Today</span><span class="v ${cls(r.day_pct)}">${pct(r.day_pct)}</span>
-      <span class="k">Weight</span><span class="v">${pct(r.weight, 1).replace('+', '')}</span></div>
+      <span class="k">Weight</span><span class="v">${pct(r.weight, 1).replace('+', '')}</span>
+      <span class="k">Stop (TMSG)</span><span class="v down">${r.stop ? fmt(r.stop) + ' · ' + pct(r.stop_distance, 1) + ' away' : 'none set'}</span>
+      ${r.suggested_stop ? `<span class="k">Desk suggests</span><span class="v">${fmt(r.suggested_stop.price)} · ${pct(r.suggested_stop.pct, 1)} (${esc(r.suggested_stop.basis)})</span>` : ''}</div>
       ${r.thesis ? `<div class="prose"><span class="lbl">Thesis</span>${esc(r.thesis)}</div>` : ''}
       ${r.exit ? `<div class="prose"><span class="lbl">Exit if</span>${esc(r.exit)}</div>` : ''}`;
   }
@@ -375,8 +381,42 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--line)
       renderTop(); renderRows(); await draw();
     } catch (e) { $('detail').innerHTML = `<div class="loading">Could not load data (${esc(e.message)}). The page retries in five minutes.</div>`; }
   }
+  // ---------- live quotes (optional; on when the lab publishes data/_live.json) ----------
+  async function liveTick() {
+    if (!book || !liveCfg) return;
+    const syms = book.rows.map(r => r.yahoo).concat(['ACWI']);
+    const q = {};
+    await Promise.all(syms.map(async s => { try { const r = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(s)}&token=${liveCfg.key}`); if (r.ok) { const j = await r.json(); if (j && j.c) q[s] = j; } } catch {} }));
+    if (!Object.keys(q).length) return;
+    const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+    let value = book.cash || 0, dayPnl = 0;
+    book.rows.forEach(r => {
+      const x = q[r.yahoo]; if (x) { r.last = x.c; r.day_pct = x.pc ? x.c / x.pc - 1 : r.day_pct; }
+      if (r.shares && r.last) { r.value = r.shares * r.last; r.pnl = r.value - r.notional; r.pnl_pct = r.entry ? r.last / r.entry - 1 : r.pnl_pct;
+        const base = (r.entered || '').slice(0, 10) === today ? r.entry : (x && x.pc); if (base) dayPnl += r.shares * (r.last - base); }
+      value += r.value || 0;
+    });
+    book.rows.forEach(r => r.weight = r.value && value ? r.value / value : r.weight);
+    book.value = value; book.book_ret = value / book.start_value - 1; book.day_pnl = dayPnl;
+    if (q.ACWI && book.bench_entry) { book.bench_ret = q.ACWI.c / book.bench_entry - 1; book.relative = book.book_ret - book.bench_ret; }
+    renderTop(); renderRows(); renderWatch(); renderDetail();
+    $('s-live-wrap').hidden = false;
+    $('s-live').textContent = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', second: '2-digit' }) + ' ET';
+    if (liveRef && liveRef.kind === 'stock' && q[liveRef.sym]) {
+      const c = q[liveRef.sym].c, b = liveRef.last; b.close = c; b.high = Math.max(b.high, c); b.low = Math.min(b.low, c);
+      try { liveRef.series.update(liveRef.candle ? b : { time: b.time, value: c }); } catch {}
+    } else if (liveRef && liveRef.kind === 'team') {
+      try { liveRef.series.update({ time: liveRef.time, value: +(value / book.start_value * 100).toFixed(3) }); } catch {}
+    }
+  }
+  async function startLive() {
+    try { liveCfg = await getJSON('data/_live.json'); } catch { liveCfg = null; }
+    clearInterval(liveTimer);
+    if (liveCfg && liveCfg.key) { liveTick(); liveTimer = setInterval(liveTick, (liveCfg.every_s || 15) * 1000); }
+  }
+
   if (!LWC) { $('legend').textContent = 'The charting library did not load; check your connection.'; }
-  refresh(true);
+  refresh(true).then(startLive);
   setInterval(() => refresh(false), 5 * 60 * 1000);
 })();
 </script>
