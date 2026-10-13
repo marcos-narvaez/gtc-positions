@@ -1,15 +1,15 @@
 {
-  "generated": "2026-10-13T10:40-04:00",
+  "generated": "2026-10-13T10:50-04:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
-  "value": 987695.6817359822,
+  "value": 988363.424098035,
   "start_value": 1000000.0,
   "cash": 0.0,
-  "book_ret": -0.012304318264017788,
-  "bench_ret": -0.0007684937188617846,
-  "relative": -0.011535824545156004,
-  "day_pnl": -10144.005103376017,
+  "book_ret": -0.011636575901964985,
+  "bench_ret": -0.000660164156157439,
+  "relative": -0.010976411745807546,
+  "day_pnl": -9476.262741323162,
   "rows": [
     {
       "ticker": "GS",
@@ -21,23 +21,23 @@
       "notional": 180000,
       "entry": 894.1,
       "shares": 201.31976289005704,
-      "last": 904.9600219726562,
-      "value": 182186.33704851597,
-      "pnl": 2186.3370485159685,
-      "pnl_pct": 0.01214631693619972,
-      "day_pct": 0.007470105174123276,
+      "last": 907.8099975585938,
+      "value": 182760.09345771934,
+      "pnl": 2760.09345771934,
+      "pnl_pct": 0.015333852542885218,
+      "day_pct": 0.010642914064674436,
       "thesis": "Q3 beat (EPS $17.01, equities +72% YoY, IB fees +21%) after a 10% selloff; post-earnings drift.",
       "exit": "Goldman closes below $850, or the US 10-year yield rises above 5.4%.",
       "stop": 849.39,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.06140052667910578,
+      "stop_distance": -0.06434716263941942,
       "suggested_stop": {
         "price": 850.0,
         "pct": -0.0493,
         "basis": "thesis"
       },
-      "weight": 0.18445594166039456
+      "weight": 0.18491183404981154
     },
     {
       "ticker": "PENG",
@@ -49,23 +49,23 @@
       "notional": 180000,
       "entry": 77.72,
       "shares": 2316.0061760164695,
-      "last": 77.70500183105469,
-      "value": 179965.26414809373,
-      "pnl": -34.73585190626909,
-      "pnl_pct": -0.00019297695503484036,
-      "day_pct": -0.018318465907969372,
+      "last": 77.68000030517578,
+      "value": 179907.36045974834,
+      "pnl": -92.63954025166458,
+      "pnl_pct": -0.0005146641125092222,
+      "day_pct": -0.018634321203009563,
       "thesis": "FQ4 beat-and-raise with estimates still rising.",
       "exit": "Penguin closes below $72.61, cuts guidance, or announces an equity offering.",
       "stop": 73.83,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.04981663650778856,
+      "stop_distance": -0.04951081732835083,
       "suggested_stop": {
         "price": 72.61,
         "pct": -0.0657,
         "basis": "thesis"
       },
-      "weight": 0.18220719952099546
+      "weight": 0.1820255141714992
     },
     {
       "ticker": "GEV",
@@ -77,23 +77,23 @@
       "notional": 180000,
       "entry": 996.67,
       "shares": 180.6014026708941,
-      "last": 993.902587890625,
-      "value": 179500.20149127848,
-      "pnl": -499.7985087215202,
-      "pnl_pct": -0.002776658381786312,
-      "day_pct": -0.002906713592872201,
+      "last": 990.3400268554688,
+      "value": 178856.79797122857,
+      "pnl": -1143.2020287714258,
+      "pnl_pct": -0.006351122382063479,
+      "day_pct": -0.006480711421078644,
       "thesis": "AI-power orders compounding after a Q2 expectations reset; Q3 Oct 28.",
       "exit": "GE Vernova closes below $950 before Oct 28, or cuts orders or free-cash-flow guidance.",
       "stop": 946.84,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.04735482980330519,
+      "stop_distance": -0.04392786888923539,
       "suggested_stop": {
         "price": 950.0,
         "pct": -0.0468,
         "basis": "thesis"
       },
-      "weight": 0.18173634329937277
+      "weight": 0.18096258280141284
     },
     {
       "ticker": "HUM",
@@ -105,23 +105,23 @@
       "notional": 180000,
       "entry": 431.25,
       "shares": 417.39130434782606,
-      "last": 417.4700012207031,
-      "value": 174248.3483355978,
-      "pnl": -5751.65166440219,
-      "pnl_pct": -0.031953620357789814,
-      "day_pct": -0.036978082535863654,
+      "last": 420.2699890136719,
+      "value": 175417.03889266303,
+      "pnl": -4582.961107336974,
+      "pnl_pct": -0.025460895040760878,
+      "day_pct": -0.030519056485185936,
       "thesis": "2027 star-ratings blowout resets bonus revenue; UNH's Oct 13 beat showed no cost spike.",
       "exit": "Humana closes below $410, CMS recalculates the 2027 star ratings, or Elevance, Molina or Centene flags a medical-cost or utilization spike.",
       "stop": 409.69,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.018642060981499786,
+      "stop_distance": -0.025180215790586935,
       "suggested_stop": {
         "price": 410.0,
         "pct": -0.0493,
         "basis": "thesis"
       },
-      "weight": 0.1764190646549527
+      "weight": 0.1774823254439488
     },
     {
       "ticker": "COHR",
@@ -133,23 +133,23 @@
       "notional": 180000,
       "entry": 295.8,
       "shares": 608.5192697768763,
-      "last": 281.7250061035156,
-      "value": 171435.09499199735,
-      "pnl": -8564.90500800265,
-      "pnl_pct": -0.04758280560001482,
-      "day_pct": -0.006926553267596169,
+      "last": 280.8900146484375,
+      "value": 170926.98660148328,
+      "pnl": -9073.01339851672,
+      "pnl_pct": -0.05040562999175968,
+      "day_pct": -0.009869876807650946,
       "thesis": "AI-optics demand (Lumentum sold out to 2029) at a lower multiple; Oct 12 selloff was sentiment, not demand.",
       "exit": "Coherent guides below consensus, Lumentum warns on demand or pricing, or COHR closes below $262.",
       "stop": 281.01,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.0025379575402437737,
+      "stop_distance": 0.0004271613275845798,
       "suggested_stop": {
         "price": 262.26,
         "pct": -0.1134,
         "basis": "2.5x daily vol"
       },
-      "weight": 0.17357076492496312
+      "weight": 0.17293940916264539
     },
     {
       "ticker": "DVN",
@@ -161,23 +161,23 @@
       "notional": 80000,
       "entry": 48.815,
       "shares": 1638.8405203318653,
-      "last": 49.654998779296875,
-      "value": 81376.62403654102,
-      "pnl": 1376.6240365410194,
-      "pnl_pct": 0.017207800456762845,
-      "day_pct": 0.013781110234726057,
+      "last": 49.73500061035156,
+      "value": 81507.7342789742,
+      "pnl": 1507.734278974196,
+      "pnl_pct": 0.01884667848717747,
+      "day_pct": 0.015414467340783222,
       "thesis": "Team pick: oil hedge against Hormuz escalation.",
       "exit": "A signed US-Iran deal reopens Hormuz, or Devon closes below $46.12.",
       "stop": 46.37,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.06607086617560753,
+      "stop_distance": -0.06757314907224665,
       "suggested_stop": {
         "price": 46.12,
         "pct": -0.0551,
         "basis": "2.5x daily vol"
       },
-      "weight": 0.08239038151256547
+      "weight": 0.08246737211401452
     },
     {
       "ticker": "SPCX",
@@ -189,23 +189,23 @@
       "notional": 20000,
       "entry": 164.93,
       "shares": 121.26356636148668,
-      "last": 156.5500030517578,
-      "value": 18983.811683957774,
-      "pnl": -1016.1883160422258,
-      "pnl_pct": -0.05080941580211118,
-      "day_pct": -0.042038899450753786,
+      "last": 156.57969665527344,
+      "value": 18987.412436218205,
+      "pnl": -1012.5875637817953,
+      "pnl_pct": -0.050629378189089747,
+      "day_pct": -0.041857198291069375,
       "thesis": "Team pick: small high-volatility SpaceX position.",
       "exit": "SpaceX stock closes below $151.16.",
       "stop": 156.68,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.000852743185179472,
+      "stop_distance": 0.0006629425586071047,
       "suggested_stop": {
         "price": 151.16,
         "pct": -0.0835,
         "basis": "2.5x daily vol"
       },
-      "weight": 0.019220304426755888
+      "weight": 0.019210962256667703
     }
   ],
   "series": [
@@ -216,8 +216,8 @@
     },
     {
       "date": "2026-10-13",
-      "book": 987735.79,
-      "bench": 999231.51
+      "book": 988378.64,
+      "bench": 999339.84
     }
   ],
   "bench_entry": 160.575
