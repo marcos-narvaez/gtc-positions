@@ -1,15 +1,15 @@
 {
-  "generated": "2026-10-15T16:05-04:00",
+  "generated": "2026-10-15T17:45-04:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
-  "value": 921593.8514815549,
+  "value": 921626.9517268398,
   "start_value": 1000000.0,
   "cash": 0.0,
-  "book_ret": -0.07840614851844507,
+  "book_ret": -0.07837304827316027,
   "bench_ret": -0.008376174824604843,
-  "relative": -0.07002997369384023,
-  "day_pnl": -10303.244118729228,
+  "relative": -0.06999687344855543,
+  "day_pnl": -10270.143873444373,
   "rows": [
     {
       "ticker": "HUM",
@@ -21,23 +21,23 @@
       "notional": 180000,
       "entry": 431.25,
       "shares": 417.39130434782606,
-      "last": 432.1099853515625,
-      "value": 180358.95040760867,
-      "pnl": 358.95040760867414,
-      "pnl_pct": 0.0019941689311593347,
-      "day_pct": 0.011020087392518807,
+      "last": 432.20001220703125,
+      "value": 180396.5268342391,
+      "pnl": 396.5268342391064,
+      "pnl_pct": 0.0022029268568841687,
+      "day_pct": 0.01123072580026041,
       "thesis": "The 2027 star-ratings blowout resets bonus revenue above Street models, and UNH's Q3 showed no cost spike. It is the book's least AI-correlated high-vol name.",
       "exit": "Humana closes below $410, CMS recalculates the 2027 star ratings, or Elevance, Molina or Centene flags a medical-cost or utilization spike.",
       "stop": 409.69,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.051890690129087536,
+      "stop_distance": -0.05208818040534291,
       "suggested_stop": {
         "price": 410.0,
         "pct": -0.0493,
         "basis": "thesis"
       },
-      "weight": 0.19570329176747817
+      "weight": 0.19573703492094346
     },
     {
       "ticker": "GS",
@@ -49,23 +49,23 @@
       "notional": 180000,
       "entry": 894.1,
       "shares": 201.31976289005704,
-      "last": 891.52001953125,
-      "value": 179480.59894377028,
-      "pnl": -519.401056229719,
-      "pnl_pct": -0.002885561423498495,
-      "day_pct": 0.013436420974479946,
+      "last": 891.280029296875,
+      "value": 179432.28416668996,
+      "pnl": -567.7158333100379,
+      "pnl_pct": -0.003153976851722473,
+      "day_pct": 0.013163611795924623,
       "thesis": "The Q3 print cleared both exit metrics after a 10% one-month selloff, and MS's equities beat confirms the trading backdrop. The 10-year fell back to ~5.1% overnight, away from the 5.4% trigger.",
       "exit": "Goldman closes below $850, or the US 10-year yield rises above 5.4%.",
       "stop": 849.39,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.04725078361493085,
+      "stop_distance": -0.0469942418993925,
       "suggested_stop": {
         "price": 850.0,
         "pct": -0.0493,
         "basis": "thesis"
       },
-      "weight": 0.19475021307405332
+      "weight": 0.19469079526210703
     },
     {
       "ticker": "GEV",
@@ -77,19 +77,19 @@
       "notional": 180000,
       "entry": 996.67,
       "shares": 180.6014026708941,
-      "last": 926.4500122070312,
-      "value": 167318.1717090568,
-      "pnl": -12681.828290943202,
-      "pnl_pct": -0.0704546016163512,
-      "day_pct": 0.004564876551161889,
+      "last": 926.4400024414062,
+      "value": 167316.3639313445,
+      "pnl": -12683.636068655498,
+      "pnl_pct": -0.07046464482586379,
+      "day_pct": 0.0045540227988418724,
       "thesis": "Sold Oct 15 after its exit fired; re-entry considered before or after the Oct 28 print.",
       "exit": "n/a (sold)",
       "stop": 946.84,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.022004951723626265,
+      "stop_distance": 0.022015994025348373,
       "suggested_stop": null,
-      "weight": 0.18155304686557533
+      "weight": 0.1815445648782798
     },
     {
       "ticker": "COHR",
@@ -101,23 +101,23 @@
       "notional": 180000,
       "entry": 295.8,
       "shares": 608.5192697768763,
-      "last": 250.52499389648438,
-      "value": 152449.28634674507,
-      "pnl": -27550.713653254934,
-      "pnl_pct": -0.15305952029586078,
-      "day_pct": -0.028972891874091578,
+      "last": 250.60000610351562,
+      "value": 152494.93272019207,
+      "pnl": -27505.067279807932,
+      "pnl_pct": -0.15280592933226633,
+      "day_pct": -0.028682146885598336,
       "thesis": "Coherent shares the AI-optics demand Lumentum calls sold out to 2029, at a lower multiple. It is the book's only tail name; the pressure is sector sentiment, not a company warning.",
       "exit": "Coherent guides below consensus, Lumentum warns on demand or pricing, or a close below $262.",
       "stop": 281.01,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.1216844899559677,
+      "stop_distance": 0.12134873565774318,
       "suggested_stop": {
         "price": 262.0,
         "pct": -0.1143,
         "basis": "thesis"
       },
-      "weight": 0.1654191660476765
+      "weight": 0.16546275305259292
     },
     {
       "ticker": "PENG",
@@ -141,7 +141,7 @@
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.19356610526196327,
       "suggested_stop": null,
-      "weight": 0.1554569219745106
+      "weight": 0.1554513387369122
     },
     {
       "ticker": "DVN",
@@ -169,7 +169,7 @@
         "pct": -0.0552,
         "basis": "thesis"
       },
-      "weight": 0.08756190141910417
+      "weight": 0.0875587566321498
     },
     {
       "ticker": "SPCX",
@@ -197,7 +197,7 @@
         "pct": -0.0835,
         "basis": "thesis"
       },
-      "weight": 0.019555458851601936
+      "weight": 0.019554756517014788
     }
   ],
   "series": [
@@ -218,7 +218,7 @@
     },
     {
       "date": "2026-10-15",
-      "book": 921593.85,
+      "book": 921626.95,
       "bench": 991623.83
     }
   ],
