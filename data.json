@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-16T07:30-04:00",
+  "generated": "2026-10-16T09:00-04:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -9,7 +9,7 @@
   "book_ret": -0.07837304827316027,
   "bench_ret": -0.008376174824604843,
   "relative": -0.06999687344855543,
-  "day_pnl": 2878.888360518301,
+  "day_pnl": 875.4100996487314,
   "rows": [
     {
       "ticker": "HUM",
@@ -25,7 +25,7 @@
       "value": 180396.5268342391,
       "pnl": 396.5268342391064,
       "pnl_pct": 0.0022029268568841687,
-      "day_pct": 0.01123072580026041,
+      "day_pct": 2.8243940963790237e-08,
       "thesis": "2027 star-ratings relief and the CenterWell JV (no put, lower liabilities) are still being priced in, and the stock has held $410 through a market sell-off. Managed care is the strongest group in the tape this week (UNH beat-and-raise).",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or ELV/CNC/MOH flagging a cost or utilization spike.",
       "stop": 409.69,
