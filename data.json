@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19T07:30-04:00",
+  "generated": "2026-10-19T09:00-04:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -9,7 +9,7 @@
   "book_ret": -0.108950955984082,
   "bench_ret": -0.01765526705175724,
   "relative": -0.09129568893232476,
-  "day_pnl": -3404.062691785583,
+  "day_pnl": 3775.0677429970196,
   "rows": [
     {
       "ticker": "GS",
@@ -53,7 +53,7 @@
       "value": 172449.39283288043,
       "pnl": -7550.607167119568,
       "pnl_pct": -0.04194781759510868,
-      "day_pct": -0.04405367037920083,
+      "day_pct": -0.00443372611539905,
       "thesis": "2027 star-ratings relief and the CenterWell JV are still the setup, and UNH's beat-and-raise supports the group. Friday's drop with no news looks like profit-taking after a +15% stars move, but it sits on the exit line.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or ELV/CNC/MOH flagging a cost or utilization spike.",
       "stop": 409.69,
