@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21T09:10-04:00",
+  "generated": "2026-10-21T09:20-04:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -9,7 +9,7 @@
   "book_ret": -0.11071214893110926,
   "bench_ret": -0.011240826576609408,
   "relative": -0.09947132235449985,
-  "day_pnl": -11415.319184956252,
+  "day_pnl": -16590.971358869287,
   "rows": [
     {
       "ticker": "HUM",
@@ -25,7 +25,7 @@
       "value": 178384.69769021738,
       "pnl": -1615.3023097826226,
       "pnl_pct": -0.008973901721014532,
-      "day_pct": 0.0298809698848439,
+      "day_pct": 1.1424990731256912e-08,
       "thesis": "2027 star-ratings relief and the CenterWell JV remain the setup, and ELV's print removes the peer cost-spike risk for now. MOH tonight and HUM's own Q3 on Nov 6 are the next tests.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or MOH or CNC flagging a cost or utilization spike.",
       "stop": 409.69,
