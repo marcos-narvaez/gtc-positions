@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-22T07:30-04:00",
+  "generated": "2026-10-22T09:00-04:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -9,7 +9,7 @@
   "book_ret": -0.09227543014493389,
   "bench_ret": -0.006321048988984779,
   "relative": -0.08595438115594911,
-  "day_pnl": 9737.606931492972,
+  "day_pnl": 10555.693888014703,
   "rows": [
     {
       "ticker": "GS",
@@ -49,7 +49,7 @@
       "value": 177566.61430027173,
       "pnl": -2433.385699728271,
       "pnl_pct": -0.01351880944293482,
-      "day_pct": -0.004586051224356846,
+      "day_pct": 3.156347694321937e-08,
       "thesis": "2027 star-ratings relief and the CenterWell JV remain the setup. ELV and now MOH both show stable Medicare cost trend, so the peer cost-spike exit did not fire; CNC and HUM's own Q3 on Nov 6 are the next tests.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or CNC flagging a cost or utilization spike.",
       "stop": 409.69,
