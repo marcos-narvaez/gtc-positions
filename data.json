@@ -1,44 +1,16 @@
 {
-  "generated": "2026-10-23T16:05-04:00",
+  "generated": "2026-10-23T17:45-04:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
-  "value": 852848.1094574082,
+  "value": 852810.243355078,
   "start_value": 1000000.0,
   "cash": 0.0,
-  "book_ret": -0.1471518905425918,
+  "book_ret": -0.14718975664492195,
   "bench_ret": -0.02350924457880854,
-  "relative": -0.12364264596378327,
-  "day_pnl": 7429.8188778388985,
+  "relative": -0.12368051206611341,
+  "day_pnl": 7391.952775508747,
   "rows": [
-    {
-      "ticker": "HUM",
-      "bloomberg": "HUM US Equity",
-      "yahoo": "HUM",
-      "name": "Humana",
-      "origin": "desk",
-      "entered": "2026-10-12T10:29:00-04:00",
-      "notional": 180000,
-      "entry": 431.25,
-      "shares": 417.39130434782606,
-      "last": 422.4200134277344,
-      "value": 176314.44038722824,
-      "pnl": -3685.559612771758,
-      "pnl_pct": -0.020475331182065237,
-      "day_pct": 0.0034444578657251146,
-      "thesis": "2027 star-ratings relief and the CenterWell JV remain the setup; ELV and MOH showed stable Medicare cost trend. CNC on Oct 27 and HUM's own Q3 on Nov 6 are the tests.",
-      "exit": "A close below $410, a CMS recalculation of 2027 stars, or CNC flagging a cost or utilization spike.",
-      "stop": 409.69,
-      "stop_pct": -0.05,
-      "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.030141832827512594,
-      "suggested_stop": {
-        "price": 410.0,
-        "pct": -0.0493,
-        "basis": "thesis"
-      },
-      "weight": 0.20673603943309615
-    },
     {
       "ticker": "GS",
       "bloomberg": "GS US Equity",
@@ -49,19 +21,47 @@
       "notional": 180000,
       "entry": 894.1,
       "shares": 201.31976289005704,
-      "last": 875.719970703125,
-      "value": 176299.7368600408,
-      "pnl": -3700.263139959192,
-      "pnl_pct": -0.020557017444217673,
-      "day_pct": -0.01660849321947533,
+      "last": 875.6799926757812,
+      "value": 176291.68849305518,
+      "pnl": -3708.311506944825,
+      "pnl_pct": -0.020601730594137946,
+      "day_pct": -0.016653386625887112,
       "thesis": "",
       "exit": "",
       "stop": 849.39,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.03006094594598363,
+      "stop_distance": -0.03001666464419639,
       "suggested_stop": null,
-      "weight": 0.20671879893385087
+      "weight": 0.20671854010512156
+    },
+    {
+      "ticker": "HUM",
+      "bloomberg": "HUM US Equity",
+      "yahoo": "HUM",
+      "name": "Humana",
+      "origin": "desk",
+      "entered": "2026-10-12T10:29:00-04:00",
+      "notional": 180000,
+      "entry": 431.25,
+      "shares": 417.39130434782606,
+      "last": 422.07000732421875,
+      "value": 176168.35088315216,
+      "pnl": -3831.6491168478387,
+      "pnl_pct": -0.021286939538043503,
+      "day_pct": 0.00261303020219672,
+      "thesis": "2027 star-ratings relief and the CenterWell JV remain the setup; ELV and MOH showed stable Medicare cost trend. CNC on Oct 27 and HUM's own Q3 on Nov 6 are the tests.",
+      "exit": "A close below $410, a CMS recalculation of 2027 stars, or CNC flagging a cost or utilization spike.",
+      "stop": 409.69,
+      "stop_pct": -0.05,
+      "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
+      "stop_distance": -0.029337567487250915,
+      "suggested_stop": {
+        "price": 410.0,
+        "pct": -0.0493,
+        "basis": "thesis"
+      },
+      "weight": 0.20657391518901153
     },
     {
       "ticker": "GEV",
@@ -73,19 +73,19 @@
       "notional": 180000,
       "entry": 996.67,
       "shares": 180.6014026708941,
-      "last": 814.5700073242188,
-      "value": 147112.48589639438,
-      "pnl": -32887.514103605616,
-      "pnl_pct": -0.18270841168669794,
-      "day_pct": -0.010411342755523023,
+      "last": 815.0,
+      "value": 147190.14317677869,
+      "pnl": -32809.856823221315,
+      "pnl_pct": -0.18227698235122958,
+      "day_pct": -0.009888961780499028,
       "thesis": "",
       "exit": "",
       "stop": 946.84,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.16237584429392804,
+      "stop_distance": 0.16176257668711647,
       "suggested_stop": null,
-      "weight": 0.1724955291159513
+      "weight": 0.17259424863110404
     },
     {
       "ticker": "COHR",
@@ -97,19 +97,19 @@
       "notional": 180000,
       "entry": 295.8,
       "shares": 608.5192697768763,
-      "last": 209.24000549316406,
-      "value": 127326.57535080978,
-      "pnl": -52673.424649190216,
-      "pnl_pct": -0.2926301369399458,
-      "day_pct": 0.023178510969017463,
+      "last": 209.2899932861328,
+      "value": 127356.99388608488,
+      "pnl": -52643.00611391512,
+      "pnl_pct": -0.29246114507730625,
+      "day_pct": 0.023422950054439173,
       "thesis": "Exited: closed below its $262 exit; very likely auto-closed. Re-entry only above $262.",
       "exit": "n/a (not held)",
       "stop": 281.01,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.3430032145988482,
+      "stop_distance": 0.34268244548039384,
       "suggested_stop": null,
-      "weight": 0.14929572328162447
+      "weight": 0.14933802082986733
     },
     {
       "ticker": "PENG",
@@ -133,7 +133,7 @@
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.38240030351877063,
       "suggested_stop": null,
-      "weight": 0.1450409376956269
+      "weight": 0.14504737773903825
     },
     {
       "ticker": "DVN",
@@ -145,23 +145,23 @@
       "notional": 80000,
       "entry": 48.815,
       "shares": 1638.8405203318653,
-      "last": 51.3849983215332,
-      "value": 84211.8173865135,
-      "pnl": 4211.817386513503,
-      "pnl_pct": 0.05264771733141882,
-      "day_pct": 0.0433502197265625,
+      "last": 51.38999938964844,
+      "value": 84220.01333958568,
+      "pnl": 4220.013339585683,
+      "pnl_pct": 0.052750166744821136,
+      "day_pct": 0.04345176425682107,
       "thesis": "The team's oil hedge, offsetting CCL; activist pressure adds a takeover angle.",
       "exit": "A signed US-Iran deal that reopens Hormuz, or a close below $46.12.",
       "stop": 46.37,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.09751383643489231,
+      "stop_distance": -0.09760166275967641,
       "suggested_stop": {
         "price": 46.12,
         "pct": -0.0552,
         "basis": "thesis"
       },
-      "weight": 0.09874187027287899
+      "weight": 0.09875586508934514
     },
     {
       "ticker": "SPCX",
@@ -185,7 +185,7 @@
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.0623329999622384,
       "suggested_stop": null,
-      "weight": 0.020971101266971305
+      "weight": 0.020972032416512177
     }
   ],
   "series": [
@@ -236,7 +236,7 @@
     },
     {
       "date": "2026-10-23",
-      "book": 852848.11,
+      "book": 852810.24,
       "bench": 976490.76
     }
   ],
