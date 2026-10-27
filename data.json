@@ -1,15 +1,15 @@
 {
-  "generated": "2026-10-27T16:05-04:00",
+  "generated": "2026-10-27T17:45-04:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
-  "value": 900574.7700314486,
+  "value": 900443.9186518104,
   "start_value": 1000000.0,
   "cash": 0.0,
-  "book_ret": -0.09942522996855141,
+  "book_ret": -0.0995560813481896,
   "bench_ret": -0.012237268501624987,
-  "relative": -0.08718796146692642,
-  "day_pnl": 20258.414125753392,
+  "relative": -0.08731881284656462,
+  "day_pnl": 20127.56274611524,
   "rows": [
     {
       "ticker": "GS",
@@ -21,19 +21,19 @@
       "notional": 180000,
       "entry": 894.1,
       "shares": 201.31976289005704,
-      "last": 912.0750122070312,
-      "value": 183618.7251954654,
-      "pnl": 3618.7251954654057,
-      "pnl_pct": 0.020104028863696666,
-      "day_pct": 0.01680603367562017,
+      "last": 911.77001953125,
+      "value": 183557.32414229392,
+      "pnl": 3557.3241422939172,
+      "pnl_pct": 0.01976291190163293,
+      "day_pct": 0.01646601954431448,
       "thesis": "",
       "exit": "",
       "stop": 849.39,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.06872243112478071,
+      "stop_distance": -0.06841091305383962,
       "suggested_stop": null,
-      "weight": 0.20389059443565508
+      "weight": 0.20385203380253278
     },
     {
       "ticker": "HUM",
@@ -45,23 +45,23 @@
       "notional": 180000,
       "entry": 431.25,
       "shares": 417.39130434782606,
-      "last": 415.0199890136719,
-      "value": 173225.73454483695,
-      "pnl": -6774.265455163055,
-      "pnl_pct": -0.037634808084239135,
-      "day_pct": -0.005273023791592335,
+      "last": 414.8500061035156,
+      "value": 173154.78515625,
+      "pnl": -6845.21484375,
+      "pnl_pct": -0.03802897135416672,
+      "day_pct": -0.005680441724951857,
       "thesis": "Stars recovery plus the CenterWell/primary-care deal, with three peers now reporting a stable Medicare cost trend. Its own Q3 on Nov 6 is the dated test.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or a peer flagging a cost or utilization spike.",
       "stop": 409.69,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.012848752240452233,
+      "stop_distance": -0.012444271489844061,
       "suggested_stop": {
         "price": 377.86,
         "pct": -0.0943,
         "basis": "2.5x daily vol"
       },
-      "weight": 0.19235019712887116
+      "weight": 0.19229935542849352
     },
     {
       "ticker": "GEV",
@@ -73,19 +73,19 @@
       "notional": 180000,
       "entry": 996.67,
       "shares": 180.6014026708941,
-      "last": 895.52001953125,
-      "value": 161732.17164721023,
-      "pnl": -18267.828352789773,
-      "pnl_pct": -0.1014879352932766,
-      "day_pct": 0.04051591184715053,
+      "last": 895.0800170898438,
+      "value": 161652.70658911363,
+      "pnl": -18347.29341088637,
+      "pnl_pct": -0.10192940783825766,
+      "day_pct": 0.04000466750693521,
       "thesis": "",
       "exit": "",
       "stop": 946.84,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.05730355474979887,
+      "stop_distance": 0.0578233028578059,
       "suggested_stop": null,
-      "weight": 0.17958772222939628
+      "weight": 0.17952556871187283
     },
     {
       "ticker": "COHR",
@@ -97,19 +97,19 @@
       "notional": 180000,
       "entry": 295.8,
       "shares": 608.5192697768763,
-      "last": 235.6300048828125,
-      "value": 143385.39850881085,
-      "pnl": -36614.601491189154,
-      "pnl_pct": -0.20341445272882863,
-      "day_pct": 0.039528851999878656,
+      "last": 235.7899932861328,
+      "value": 143482.7545351721,
+      "pnl": -36517.245464827894,
+      "pnl_pct": -0.20287358591571059,
+      "day_pct": 0.040234672811279903,
       "thesis": "",
       "exit": "",
       "stop": 281.01,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.19259005295083975,
+      "stop_distance": 0.19178085585248894,
       "suggested_stop": null,
-      "weight": 0.1592154291684229
+      "weight": 0.1593466861878546
     },
     {
       "ticker": "PENG",
@@ -133,7 +133,7 @@
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.2516358348732124,
       "suggested_stop": null,
-      "weight": 0.151704458926581
+      "weight": 0.1517265044280682
     },
     {
       "ticker": "DVN",
@@ -145,23 +145,23 @@
       "notional": 80000,
       "entry": 48.815,
       "shares": 1638.8405203318653,
-      "last": 51.2400016784668,
-      "value": 83974.19101254418,
-      "pnl": 3974.191012544179,
-      "pnl_pct": 0.049677387656802185,
-      "day_pct": -0.007161425810957689,
+      "last": 51.22999954223633,
+      "value": 83957.7991063998,
+      "pnl": 3957.799106399805,
+      "pnl_pct": 0.04947248882999755,
+      "day_pct": -0.007355229603865809,
       "thesis": "The team's oil hedge against the Iran war.",
       "exit": "A signed US\u2013Iran deal, or a close below $46.12.",
       "stop": 46.37,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.09496002183996011,
+      "stop_distance": -0.09478332199150286,
       "suggested_stop": {
         "price": 46.12,
         "pct": -0.1069,
         "basis": "thesis"
       },
-      "weight": 0.09324510724369033
+      "weight": 0.09324045325566263
     },
     {
       "ticker": "SPCX",
@@ -189,7 +189,7 @@
         "pct": -0.0822,
         "basis": "2.5x daily vol"
       },
-      "weight": 0.020006490867383212
+      "weight": 0.0200093981855154
     }
   ],
   "series": [
@@ -250,7 +250,7 @@
     },
     {
       "date": "2026-10-27",
-      "book": 900574.77,
+      "book": 900443.92,
       "bench": 987762.73
     }
   ],
