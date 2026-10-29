@@ -1,15 +1,15 @@
 {
-  "generated": "2026-10-29T14:10-04:00",
+  "generated": "2026-10-29T14:20-04:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
-  "value": 900236.093195408,
+  "value": 900057.6264406287,
   "start_value": 1000000.0,
   "cash": 0.0,
-  "book_ret": -0.09976390680459202,
-  "bench_ret": -0.012922310446831675,
-  "relative": -0.08684159635776034,
-  "day_pnl": -3238.5821367320723,
+  "book_ret": -0.0999423735593713,
+  "bench_ret": -0.012860068461242768,
+  "relative": -0.08708230509812853,
+  "day_pnl": -3417.0488915113033,
   "rows": [
     {
       "ticker": "GS",
@@ -21,19 +21,19 @@
       "notional": 180000,
       "entry": 894.1,
       "shares": 201.31976289005704,
-      "last": 926.5750122070312,
-      "value": 186537.86175737123,
-      "pnl": 6537.861757371225,
-      "pnl_pct": 0.03632145420761801,
-      "day_pct": 0.000729033596534423,
+      "last": 927.2949829101562,
+      "value": 186682.80608861215,
+      "pnl": 6682.806088612153,
+      "pnl_pct": 0.03712670049228972,
+      "day_pct": 0.0015066237284331319,
       "thesis": "",
       "exit": "",
       "stop": 849.39,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.08329602157432925,
+      "stop_distance": -0.08400776920595487,
       "suggested_stop": null,
-      "weight": 0.207209934335393
+      "weight": 0.20741205963319115
     },
     {
       "ticker": "HUM",
@@ -45,23 +45,23 @@
       "notional": 180000,
       "entry": 431.25,
       "shares": 417.39130434782606,
-      "last": 410.25,
-      "value": 171234.78260869565,
-      "pnl": -8765.217391304352,
-      "pnl_pct": -0.04869565217391303,
-      "day_pct": -0.00448920165008504,
+      "last": 409.989990234375,
+      "value": 171126.25679347824,
+      "pnl": -8873.743206521758,
+      "pnl_pct": -0.049298573369565224,
+      "day_pct": -0.00512014017380491,
       "thesis": "2027 stars recovery and CenterWell growth, with three peers showing a stable Medicare cost trend. Its own Q3 on Nov 6 is the dated test.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or a peer flagging a cost spike.",
       "stop": 409.69,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.0013711151736746086,
+      "stop_distance": -0.0007377990721239014,
       "suggested_stop": {
         "price": 367.83,
         "pct": -0.1069,
         "basis": "2.5x daily vol"
       },
-      "weight": 0.1902109723249309
+      "weight": 0.19012811154127407
     },
     {
       "ticker": "GEV",
@@ -73,19 +73,19 @@
       "notional": 180000,
       "entry": 996.67,
       "shares": 180.6014026708941,
-      "last": 889.3200073242188,
-      "value": 160612.44074604372,
-      "pnl": -19387.55925395628,
-      "pnl_pct": -0.10770866252197941,
-      "day_pct": 0.02514092900856335,
+      "last": 889.135009765625,
+      "value": 160579.02992747098,
+      "pnl": -19420.970072529017,
+      "pnl_pct": -0.10789427818071673,
+      "day_pct": 0.024927677796941827,
       "thesis": "",
       "exit": "",
       "stop": 946.84,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.06467468650439612,
+      "stop_distance": 0.06489620766320403,
       "suggested_stop": null,
-      "weight": 0.17841146557004428
+      "weight": 0.17840972090031326
     },
     {
       "ticker": "COHR",
@@ -97,19 +97,19 @@
       "notional": 180000,
       "entry": 295.8,
       "shares": 608.5192697768763,
-      "last": 239.27999877929688,
-      "value": 145606.4901293896,
-      "pnl": -34393.5098706104,
-      "pnl_pct": -0.1910750548367246,
-      "day_pct": -0.0232273389423322,
+      "last": 239.22000122070312,
+      "value": 145569.98045884573,
+      "pnl": -34430.019541154266,
+      "pnl_pct": -0.19127788633974607,
+      "day_pct": -0.02347225692654964,
       "thesis": "",
       "exit": "",
       "stop": 281.01,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.1743982005750231,
+      "stop_distance": 0.17469274544790947,
       "suggested_stop": null,
-      "weight": 0.1617425597906835
+      "weight": 0.16173406700026235
     },
     {
       "ticker": "PENG",
@@ -121,19 +121,19 @@
       "notional": 180000,
       "entry": 77.72,
       "shares": 2316.0061760164695,
-      "last": 58.5,
-      "value": 135486.36129696347,
-      "pnl": -44513.63870303653,
-      "pnl_pct": -0.24729799279464748,
-      "day_pct": -0.01659681982540806,
+      "last": 58.44499969482422,
+      "value": 135358.98025049357,
+      "pnl": -44641.019749506435,
+      "pnl_pct": -0.24800566527503576,
+      "day_pct": -0.017521392047979645,
       "thesis": "",
       "exit": "",
       "stop": 73.83,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.2621196581196579,
+      "stop_distance": 0.2633073896061393,
       "suggested_stop": null,
-      "weight": 0.15050092117063604
+      "weight": 0.1503892376155788
     },
     {
       "ticker": "DVN",
@@ -161,7 +161,7 @@
         "pct": -0.1004,
         "basis": "thesis"
       },
-      "weight": 0.09253380005415256
+      "weight": 0.0925521479982374
     },
     {
       "ticker": "SPCX",
@@ -173,23 +173,23 @@
       "notional": 20000,
       "entry": 164.93,
       "shares": 121.26356636148668,
-      "last": 143.9499969482422,
-      "value": 17455.89000766897,
-      "pnl": -2544.1099923310285,
-      "pnl_pct": -0.12720549961655137,
-      "day_pct": 0.0025071171268347126,
+      "last": 143.80499267578125,
+      "value": 17438.306272452704,
+      "pnl": -2561.6937275472956,
+      "pnl_pct": -0.1280846863773647,
+      "day_pct": 0.0014972677469269335,
       "thesis": "Reserve 1 and the TSLA-contingency buy: SpaceX Q3 profit on AI revenue, and the Tesla merger process. Closed $144.75 on Oct 22, below its $145.51 stop: not a buy until it closes back above.",
       "exit": "A close below $133.83, or the merger committees disbanded.",
       "stop": 156.68,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.08845782092191512,
+      "stop_distance": 0.08955535607344522,
       "suggested_stop": {
         "price": 134.82,
         "pct": -0.0717,
         "basis": "thesis"
       },
-      "weight": 0.019390346754159682
+      "weight": 0.01937465531114302
     }
   ],
   "series": [
@@ -260,8 +260,8 @@
     },
     {
       "date": "2026-10-29",
-      "book": 900239.14,
-      "bench": 987077.69
+      "book": 900057.63,
+      "bench": 987139.93
     }
   ],
   "bench_entry": 160.575
