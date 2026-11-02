@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02T07:30-05:00",
+  "generated": "2026-11-02T09:00-05:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -57,8 +57,8 @@
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": -0.011610373944511476,
       "suggested_stop": {
-        "price": 370.48,
-        "pct": -0.1128,
+        "price": 368.77,
+        "pct": -0.1103,
         "basis": "2.5x daily vol"
       },
       "weight": 0.2016211682189057
@@ -86,8 +86,8 @@
       "stop_distance": 0.10370627879421201,
       "suggested_stop": {
         "price": 803.54,
-        "pct": -0.095,
-        "basis": "2.5x daily vol"
+        "pct": -0.0633,
+        "basis": "thesis"
       },
       "weight": 0.18055552902939598
     },
@@ -106,13 +106,17 @@
       "pnl": -52016.22272359913,
       "pnl_pct": -0.28897901513110635,
       "day_pct": -0.011172698154652605,
-      "thesis": "",
-      "exit": "",
+      "thesis": "A dated earnings print on an optics supplier marked down 27% with the AI-hardware group, not on its own news. Optics peers are in play (Marvell in advanced talks to buy Lumentum, Bloomberg/Reuters), and a guide held at the print can retrace the rout.",
+      "exit": "A close below $190, guidance below the $2.2B revenue low end, or a hyperscaler cutting its forward capex guide.",
       "stop": 281.01,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.33610683821824483,
-      "suggested_stop": null,
+      "suggested_stop": {
+        "price": 190.0,
+        "pct": -0.126,
+        "basis": "thesis"
+      },
       "weight": 0.149149952204798
     },
     {
@@ -154,7 +158,7 @@
       "pnl": 5465.535635978958,
       "pnl_pct": 0.06831919544973686,
       "day_pct": 0.0007676362671062975,
-      "thesis": "The team's oil hedge against the Iran standoff. Kept at its current weight.",
+      "thesis": "The team's oil hedge on the Iran standoff.",
       "exit": "A signed US-Iran deal, or a close below $46.12.",
       "stop": 46.37,
       "stop_pct": -0.05,
@@ -162,7 +166,7 @@
       "stop_distance": -0.11075266264398387,
       "suggested_stop": {
         "price": 46.12,
-        "pct": -0.0987,
+        "pct": -0.1156,
         "basis": "thesis"
       },
       "weight": 0.09959997139117252
@@ -183,15 +187,15 @@
       "pnl_pct": -0.183168609587685,
       "day_pct": -0.009613474162224911,
       "thesis": "Reserve 1 and the TSLA-contingency buy: SpaceX Q3 profit on AI revenue, and the Tesla merger process. Closed $144.75 on Oct 22, below its $145.51 stop: not a buy until it closes back above.",
-      "exit": "A close below $133.83, or the merger committees disbanded.",
+      "exit": "A close below $130, or the merger committees disbanded.",
       "stop": 156.68,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.1630307198655343,
       "suggested_stop": {
-        "price": 134.82,
-        "pct": -0.063,
-        "basis": "thesis"
+        "price": 121.17,
+        "pct": -0.1006,
+        "basis": "2.5x daily vol"
       },
       "weight": 0.019038407121906374
     }
