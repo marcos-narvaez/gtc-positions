@@ -1,15 +1,15 @@
 {
-  "generated": "2026-11-03T14:50-05:00",
+  "generated": "2026-11-03T15:00-05:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
-  "value": 866257.4221039406,
+  "value": 864788.8327529054,
   "start_value": 1000000.0,
   "cash": 0.0,
-  "book_ret": -0.13374257789605937,
-  "bench_ret": -0.02874042214624195,
-  "relative": -0.10500215574981742,
-  "day_pnl": 26259.22705341133,
+  "book_ret": -0.1352111672470946,
+  "bench_ret": -0.0297680325770181,
+  "relative": -0.10544313467007649,
+  "day_pnl": 24790.637702376134,
   "rows": [
     {
       "ticker": "GS",
@@ -21,19 +21,19 @@
       "notional": 180000,
       "entry": 894.1,
       "shares": 201.31976289005704,
-      "last": 896.5499877929688,
-      "value": 180493.230961564,
-      "pnl": 493.23096156399697,
-      "pnl_pct": 0.0027401720086888126,
-      "day_pct": -0.00493897026307577,
+      "last": 895.6699829101562,
+      "value": 180316.0685872141,
+      "pnl": 316.0685872141039,
+      "pnl_pct": 0.001755936595633889,
+      "day_pct": -0.005915668246219474,
       "thesis": "",
       "exit": "",
       "stop": 849.39,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.05259604978529964,
+      "stop_distance": -0.05166521575257266,
       "suggested_stop": null,
-      "weight": 0.20835980893899567
+      "weight": 0.20850878475524381
     },
     {
       "ticker": "HUM",
@@ -45,23 +45,23 @@
       "notional": 180000,
       "entry": 431.25,
       "shares": 417.39130434782606,
-      "last": 418.7449951171875,
-      "value": 174780.51970108695,
-      "pnl": -5219.480298913055,
-      "pnl_pct": -0.02899711277173911,
-      "day_pct": 0.020308947435948133,
+      "last": 419.2300109863281,
+      "value": 174982.96110733695,
+      "pnl": -5017.038892663055,
+      "pnl_pct": -0.027872438292572466,
+      "day_pct": 0.021490731186686762,
       "thesis": "2027 stars recovery and CenterWell growth, with peers showing a stable Medicare cost trend. Its own Q3 on Fri Nov 6 is the dated test, priced at +/-9.8% to Nov 13.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or a peer flagging a cost spike.",
       "stop": 409.69,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.021630097607859722,
+      "stop_distance": -0.02276199398005241,
       "suggested_stop": {
         "price": 362.39,
         "pct": -0.117,
         "basis": "2.5x daily vol"
       },
-      "weight": 0.201765104969127
+      "weight": 0.20234183708213369
     },
     {
       "ticker": "GEV",
@@ -73,23 +73,23 @@
       "notional": 180000,
       "entry": 996.67,
       "shares": 180.6014026708941,
-      "last": 920.72998046875,
-      "value": 166285.12595380118,
-      "pnl": -13714.87404619882,
-      "pnl_pct": -0.07619374470110463,
-      "day_pct": 0.061972295811707045,
+      "last": 915.8400268554688,
+      "value": 165401.99347224698,
+      "pnl": -14598.006527753023,
+      "pnl_pct": -0.0811000362652946,
+      "day_pct": 0.05633221090596163,
       "thesis": "AI-power reserve: turbine backlog after the Oct 28 Q3; not bought (a third AI name).",
       "exit": "A close below $803.54.",
       "stop": 946.84,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.028354153861655407,
+      "stop_distance": 0.0338448552537689,
       "suggested_stop": {
         "price": 803.54,
         "pct": -0.0681,
         "basis": "thesis"
       },
-      "weight": 0.19195809664745236
+      "weight": 0.19126286927840913
     },
     {
       "ticker": "COHR",
@@ -101,23 +101,23 @@
       "notional": 180000,
       "entry": 295.8,
       "shares": 608.5192697768763,
-      "last": 205.87860107421875,
-      "value": 125281.09598836841,
-      "pnl": -54718.90401163159,
-      "pnl_pct": -0.30399391117573105,
-      "day_pct": 0.021476562015473766,
+      "last": 205.56500244140625,
+      "value": 125090.26517732632,
+      "pnl": -54909.73482267368,
+      "pnl_pct": -0.3050540823481871,
+      "day_pct": 0.01992062734510669,
       "thesis": "A dated earnings print on an optics supplier marked down with the AI-hardware group, not on its own news. The Marvell-Lumentum price puts a value on scarce AI optics, and a guide held at the print can retrace the rout.",
       "exit": "A close below $190, guidance below the $2.2B revenue low end, or a hyperscaler cutting its forward capex guide.",
       "stop": 281.01,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.36493058789872257,
+      "stop_distance": 0.367012850740964,
       "suggested_stop": {
         "price": 190.0,
         "pct": -0.1151,
         "basis": "thesis"
       },
-      "weight": 0.14462340268795545
+      "weight": 0.1446483354544752
     },
     {
       "ticker": "PENG",
@@ -129,19 +129,19 @@
       "notional": 180000,
       "entry": 77.72,
       "shares": 2316.0061760164695,
-      "last": 53.59000015258789,
-      "value": 124114.7713261171,
-      "pnl": -55885.2286738829,
-      "pnl_pct": -0.31047349263268287,
-      "day_pct": 0.11067357829197699,
+      "last": 53.400001525878906,
+      "value": 123674.73333322445,
+      "pnl": -56325.266666775555,
+      "pnl_pct": -0.3129181481487531,
+      "day_pct": 0.10673578291977015,
       "thesis": "",
       "exit": "",
       "stop": 73.83,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.37775704030175317,
+      "stop_distance": 0.38265913652115313,
       "suggested_stop": null,
-      "weight": 0.14327700768747328
+      "weight": 0.14301148286053528
     },
     {
       "ticker": "DVN",
@@ -153,23 +153,23 @@
       "notional": 80000,
       "entry": 48.815,
       "shares": 1638.8405203318653,
-      "last": 47.69499969482422,
-      "value": 78164.49811709388,
-      "pnl": -1835.5018829061155,
-      "pnl_pct": -0.022943773536326484,
-      "day_pct": -0.019226820998885175,
+      "last": 47.76499938964844,
+      "value": 78279.21645338267,
+      "pnl": -1720.7835466173274,
+      "pnl_pct": -0.021509794332716603,
+      "day_pct": -0.01778738659986767,
       "thesis": "The team's oil hedge on the Iran standoff. Q3 on Thu Nov 5 is its dated test.",
       "exit": "A signed US-Iran deal, or a close below $46.12.",
       "stop": 46.37,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": -0.027691575705525162,
+      "stop_distance": -0.029116495497115924,
       "suggested_stop": {
         "price": 46.12,
         "pct": -0.0516,
         "basis": "thesis"
       },
-      "weight": 0.09023241374053713
+      "weight": 0.09051830168087896
     },
     {
       "ticker": "SPCX",
@@ -181,23 +181,23 @@
       "notional": 20000,
       "entry": 164.93,
       "shares": 121.26356636148668,
-      "last": 141.3300018310547,
-      "value": 17138.180055909135,
-      "pnl": -2861.8199440908647,
-      "pnl_pct": -0.1430909972045432,
-      "day_pct": 0.03025223670399968,
+      "last": 140.5500030517578,
+      "value": 17043.59462217399,
+      "pnl": -2956.4053778260095,
+      "pnl_pct": -0.1478202688913005,
+      "day_pct": 0.024566285550064126,
       "thesis": "Reserve 1 and the TSLA-contingency buy: SpaceX Q3 profit on AI revenue, and the Tesla merger process. Closed $144.75 on Oct 22, below its $145.51 stop: not a buy until it closes back above.",
       "exit": "A close below $130, or the merger committees disbanded.",
       "stop": 156.68,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.10863580251912008,
+      "stop_distance": 0.11478830734924284,
       "suggested_stop": {
         "price": 130.0,
         "pct": -0.0467,
         "basis": "thesis"
       },
-      "weight": 0.019784165328459093
+      "weight": 0.01970838888832394
     }
   ],
   "series": [
@@ -283,8 +283,8 @@
     },
     {
       "date": "2026-11-03",
-      "book": 866257.42,
-      "bench": 971259.58
+      "book": 864790.04,
+      "bench": 970231.97
     }
   ],
   "bench_entry": 160.575
