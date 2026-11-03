@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-03T07:30-05:00",
+  "generated": "2026-11-03T09:00-05:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -9,7 +9,7 @@
   "book_ret": -0.16412753469215247,
   "bench_ret": -0.02948780110296978,
   "relative": -0.1346397335891827,
-  "day_pnl": -4230.552922557151,
+  "day_pnl": -2523.4224877745523,
   "rows": [
     {
       "ticker": "GS",
@@ -49,16 +49,16 @@
       "value": 171301.5667459239,
       "pnl": -8698.43325407611,
       "pnl_pct": -0.048324629189311574,
-      "day_pct": -0.009867301177058252,
-      "thesis": "2027 stars recovery and CenterWell growth, with peers showing a stable Medicare cost trend. Its own Q3 on Nov 6 is the dated test.",
+      "day_pct": 8.923050964781964e-09,
+      "thesis": "2027 stars recovery and CenterWell growth, with peers showing a stable Medicare cost trend. Its own Q3 on Fri Nov 6 is the dated test, priced at +/-9.8% to Nov 13.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or a peer flagging a cost spike.",
       "stop": 409.69,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": -0.0017604435946064756,
       "suggested_stop": {
-        "price": 368.77,
-        "pct": -0.1103,
+        "price": 362.39,
+        "pct": -0.117,
         "basis": "2.5x daily vol"
       },
       "weight": 0.20493744423419238
@@ -86,7 +86,7 @@
       "stop_distance": 0.09809973905479841,
       "suggested_stop": {
         "price": 803.54,
-        "pct": -0.0633,
+        "pct": -0.0681,
         "basis": "thesis"
       },
       "weight": 0.18630062110686496
@@ -106,7 +106,7 @@
       "pnl": -58326.573865167025,
       "pnl_pct": -0.3240365214731502,
       "day_pct": -0.005421821785504433,
-      "thesis": "A dated earnings print on an optics supplier marked down 27% with the AI-hardware group, not on its own news. Optics peers are in play (Marvell in advanced talks to buy Lumentum, Bloomberg/Reuters), and a guide held at the print can retrace the rout.",
+      "thesis": "A dated earnings print on an optics supplier marked down with the AI-hardware group, not on its own news. The Marvell-Lumentum price puts a value on scarce AI optics, and a guide held at the print can retrace the rout.",
       "exit": "A close below $190, guidance below the $2.2B revenue low end, or a hyperscaler cutting its forward capex guide.",
       "stop": 281.01,
       "stop_pct": -0.05,
@@ -114,7 +114,7 @@
       "stop_distance": 0.4054013717876699,
       "suggested_stop": {
         "price": 190.0,
-        "pct": -0.126,
+        "pct": -0.1151,
         "basis": "thesis"
       },
       "weight": 0.14556458213995754
@@ -158,7 +158,7 @@
       "pnl": -303.1837457908696,
       "pnl_pct": -0.0037897968223857825,
       "day_pct": -0.0034835846697697237,
-      "thesis": "The team's oil hedge on the Iran standoff.",
+      "thesis": "The team's oil hedge on the Iran standoff. Q3 on Thu Nov 5 is its dated test.",
       "exit": "A signed US-Iran deal, or a close below $46.12.",
       "stop": 46.37,
       "stop_pct": -0.05,
@@ -166,7 +166,7 @@
       "stop_distance": -0.04638599668043697,
       "suggested_stop": {
         "price": 46.12,
-        "pct": -0.1156,
+        "pct": -0.0516,
         "basis": "thesis"
       },
       "weight": 0.09534566523238351
@@ -193,9 +193,9 @@
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.14895875639913614,
       "suggested_stop": {
-        "price": 121.17,
-        "pct": -0.1006,
-        "basis": "2.5x daily vol"
+        "price": 130.0,
+        "pct": -0.0467,
+        "basis": "thesis"
       },
       "weight": 0.0197837740073401
     }
