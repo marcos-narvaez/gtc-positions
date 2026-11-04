@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-04T07:30-05:00",
+  "generated": "2026-11-04T09:00-05:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -50,15 +50,15 @@
       "pnl": -5584.6976902174065,
       "pnl_pct": -0.031026098278985503,
       "day_pct": -0.0003110164660585779,
-      "thesis": "2027 stars recovery and CenterWell growth, with peers showing a stable Medicare cost trend. Its own Q3 on Fri Nov 6 is the dated test, priced at +/-9.8% to Nov 13.",
+      "thesis": "2027 stars recovery and CenterWell growth, with peers showing a stable Medicare cost trend. Its own Q3 on Fri Nov 6 is the dated test, priced at +/-9.9% to Nov 13.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or a peer flagging a cost spike.",
       "stop": 409.69,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": -0.019581437319740602,
       "suggested_stop": {
-        "price": 362.39,
-        "pct": -0.117,
+        "price": 366.27,
+        "pct": -0.1235,
         "basis": "2.5x daily vol"
       },
       "weight": 0.2015729160641142
@@ -86,7 +86,7 @@
       "stop_distance": 0.031187636040361788,
       "suggested_stop": {
         "price": 803.54,
-        "pct": -0.0681,
+        "pct": -0.1249,
         "basis": "thesis"
       },
       "weight": 0.1916487569630947
@@ -166,7 +166,7 @@
       "stop_distance": -0.026160204952265453,
       "suggested_stop": {
         "price": 46.12,
-        "pct": -0.0516,
+        "pct": -0.0315,
         "basis": "thesis"
       },
       "weight": 0.09019317352371904
@@ -194,7 +194,7 @@
       "stop_distance": 0.10879274437062869,
       "suggested_stop": {
         "price": 130.0,
-        "pct": -0.0467,
+        "pct": -0.08,
         "basis": "thesis"
       },
       "weight": 0.019803904306052104
