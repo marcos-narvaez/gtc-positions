@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-05T07:30-05:00",
+  "generated": "2026-11-05T09:00-05:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -50,16 +50,16 @@
       "pnl": -5772.5161345108645,
       "pnl_pct": -0.03206953408061597,
       "day_pct": -0.03031567024941495,
-      "thesis": "2027 stars recovery and CenterWell growth, with peers showing a stable Medicare cost trend. Its own Q3 on Fri Nov 6 is the dated test, priced at +/-9.9% to Nov 13.",
-      "exit": "A close below $410, a CMS recalculation of 2027 stars, or a peer flagging a cost spike.",
+      "thesis": "2027 stars recovery and CenterWell growth, with peers showing a stable Medicare cost trend. Its own Q3 tomorrow is the dated test, priced at +/-9.7% to Nov 13.",
+      "exit": "A close below $410, a CMS recalculation of 2027 stars, or guidance cut at Friday's print.",
       "stop": 409.69,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": -0.018524539262593454,
       "suggested_stop": {
-        "price": 366.27,
-        "pct": -0.1235,
-        "basis": "2.5x daily vol"
+        "price": 368.77,
+        "pct": -0.1165,
+        "basis": "kept: TMSG auto close; $410 line is inside one day's move, so it is a close rule"
       },
       "weight": 0.20967385659290577
     },
@@ -78,17 +78,13 @@
       "pnl": -29589.730727149523,
       "pnl_pct": -0.1643873929286085,
       "day_pct": 0.009508427951955722,
-      "thesis": "AI-power reserve: turbine backlog after the Oct 28 Q3; not bought (a third AI name).",
-      "exit": "A close below $803.54.",
+      "thesis": "AI power; hit by data-center policy risk after the sweep.",
+      "exit": "n/a (candidate)",
       "stop": 946.84,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.1368904585218107,
-      "suggested_stop": {
-        "price": 803.54,
-        "pct": -0.1249,
-        "basis": "thesis"
-      },
+      "suggested_stop": null,
       "weight": 0.18101105824362332
     },
     {
@@ -106,7 +102,7 @@
       "pnl": -61283.97788769333,
       "pnl_pct": -0.34046654382051855,
       "day_pct": -0.047353051981784855,
-      "thesis": "A dated earnings print on an optics supplier marked down with the AI-hardware group, not on its own news. The Marvell-Lumentum price puts a value on scarce AI optics, and a guide held at the print can retrace the rout.",
+      "thesis": "A strong print and guide well above the $2.2B exit line on an optics supplier marked down with the AI-hardware group, not on its own news. It is the book's highest-volatility name and the one AI-hardware slot.",
       "exit": "A close below $190, guidance below the $2.2B revenue low end, or a hyperscaler cutting its forward capex guide.",
       "stop": 281.01,
       "stop_pct": -0.05,
@@ -158,17 +154,13 @@
       "pnl": -7694.3579934286245,
       "pnl_pct": -0.09617947491785783,
       "day_pct": -0.00042821792376412926,
-      "thesis": "The team's oil hedge on the Iran standoff. Q3 on Thu Nov 5 is its dated test.",
-      "exit": "A signed US-Iran deal, or a close below $46.12.",
+      "thesis": "",
+      "exit": "",
       "stop": 46.37,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.05109363378715148,
-      "suggested_stop": {
-        "price": 46.12,
-        "pct": -0.0315,
-        "basis": "thesis"
-      },
+      "suggested_stop": null,
       "weight": 0.08701613819234424
     },
     {
@@ -186,17 +178,13 @@
       "pnl": -3517.8562821869527,
       "pnl_pct": -0.17589281410934754,
       "day_pct": 0.013749599437226534,
-      "thesis": "Reserve 1 and the TSLA-contingency buy: SpaceX Q3 profit on AI revenue, and the Tesla merger process. Closed $144.75 on Oct 22, below its $145.51 stop: not a buy until it closes back above.",
-      "exit": "A close below $130, or the merger committees disbanded.",
+      "thesis": "",
+      "exit": "",
       "stop": 156.68,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.15276267003216226,
-      "suggested_stop": {
-        "price": 130.0,
-        "pct": -0.08,
-        "basis": "thesis"
-      },
+      "suggested_stop": null,
       "weight": 0.019835416098303266
     }
   ],
