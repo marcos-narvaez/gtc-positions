@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-06T07:30-05:00",
+  "generated": "2026-11-06T09:00-05:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -50,15 +50,15 @@
       "pnl": -8122.431216032623,
       "pnl_pct": -0.04512461786684785,
       "day_pct": 0.004365874499809408,
-      "thesis": "2027 stars recovery and CenterWell growth, with peers showing a stable Medicare cost trend. Its own Q3 tomorrow is the dated test, priced at +/-9.7% to Nov 13.",
-      "exit": "A close below $410, a CMS recalculation of 2027 stars, or guidance cut at Friday's print.",
+      "thesis": "2027 stars recovery and CenterWell growth, now confirmed by a guidance raise and a cost trend in line or better. The print passed the guidance-cut leg; the question is whether the market pays for it into Nov 13.",
+      "exit": "A close below $410, a CMS recalculation of 2027 stars, or a guidance walk-back.",
       "stop": 409.69,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": -0.005105778433894481,
       "suggested_stop": {
         "price": 368.77,
-        "pct": -0.1165,
+        "pct": -0.1045,
         "basis": "kept: TMSG auto close; $410 line is inside one day's move, so it is a close rule"
       },
       "weight": 0.22593540939950169
@@ -78,8 +78,8 @@
       "pnl": -40844.811464363826,
       "pnl_pct": -0.22691561924646575,
       "day_pct": -0.013444117532906086,
-      "thesis": "AI power; hit by data-center policy risk after the sweep.",
-      "exit": "n/a (candidate)",
+      "thesis": "",
+      "exit": "",
       "stop": 946.84,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
@@ -102,17 +102,13 @@
       "pnl": -76697.77210537366,
       "pnl_pct": -0.42609873391874264,
       "day_pct": -0.0328168043138336,
-      "thesis": "A strong print and guide well above the $2.2B exit line on an optics supplier marked down with the AI-hardware group, not on its own news. It is the book's highest-volatility name and the one AI-hardware slot.",
-      "exit": "Close exit fired Nov 5 ($169.76 < $190): sell all at Friday's open (alert 2047).",
+      "thesis": "Sold Nov 6 on its close exit; watch for a re-entry only if the data-center moratorium push fades.",
+      "exit": "n/a (candidate)",
       "stop": 281.01,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.655336999841174,
-      "suggested_stop": {
-        "price": 190.0,
-        "pct": -0.1151,
-        "basis": "thesis"
-      },
+      "suggested_stop": null,
       "weight": 0.135792188104479
     },
     {
