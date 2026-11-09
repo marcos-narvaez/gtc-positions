@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-09T07:30-05:00",
+  "generated": "2026-11-09T09:00-05:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -26,7 +26,7 @@
       "pnl": 1039.3002717391064,
       "pnl_pct": 0.005773890398550696,
       "day_pct": 0.001986671212287572,
-      "thesis": "2027 stars recovery and CenterWell growth, now confirmed by a guidance raise and a cost trend in line or better. The print passed the guidance-cut leg; the question is whether the market pays for it into Nov 13.",
+      "thesis": "2027 stars recovery and CenterWell growth, confirmed by a guidance raise and benign cost trend. A clean beat-and-raise with a strong first-day reaction; drift into Nov 13.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or a guidance walk-back.",
       "stop": 409.69,
       "stop_pct": -0.05,
@@ -34,8 +34,8 @@
       "stop_distance": -0.05545370677344752,
       "suggested_stop": {
         "price": 368.77,
-        "pct": -0.1045,
-        "basis": "kept: TMSG auto close; $410 line is inside one day's move, so it is a close rule"
+        "pct": -0.1462,
+        "basis": "kept: TMSG auto close; tool's thesis stop is $410 (-5.1%), which is the close rule"
       },
       "weight": 0.2277751120611334
     },
