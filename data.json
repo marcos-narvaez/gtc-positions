@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-13T07:30-05:00",
+  "generated": "2026-11-13T09:00-05:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -9,7 +9,7 @@
   "book_ret": -0.1330753789683342,
   "bench_ret": -0.025190728449030808,
   "relative": -0.1078846505193034,
-  "day_pnl": -10866.279906153866,
+  "day_pnl": -9526.453819197353,
   "rows": [
     {
       "ticker": "HUM",
@@ -25,7 +25,7 @@
       "value": 185188.17085597824,
       "pnl": 5188.170855978242,
       "pnl_pct": 0.028823171422101446,
-      "day_pct": -0.007893399799241307,
+      "day_pct": -0.0007207372167088444,
       "thesis": "2027 stars recovery and CenterWell growth, confirmed by a guidance raise and benign cost trend. Post-earnings drift into Nov 13 with analysts still raising targets.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or a guidance walk-back.",
       "stop": 409.69,
