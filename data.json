@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-17T07:30-05:00",
+  "generated": "2026-11-17T09:00-05:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
@@ -9,7 +9,7 @@
   "book_ret": -0.17467872886680846,
   "bench_ret": -0.047174217655301165,
   "relative": -0.1275045112115073,
-  "day_pnl": -3798.1779118797294,
+  "day_pnl": 53.097310900144834,
   "rows": [
     {
       "ticker": "HUM",
@@ -149,7 +149,7 @@
       "value": 72551.47058529333,
       "pnl": -7448.529414706674,
       "pnl_pct": -0.09310661768383333,
-      "day_pct": -0.050407540588509825,
+      "day_pct": 1.0340268197239766e-08,
       "thesis": "",
       "exit": "",
       "stop": 46.37,
