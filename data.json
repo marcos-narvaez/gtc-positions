@@ -1,15 +1,15 @@
 {
-  "generated": "2026-11-24T16:05-05:00",
+  "generated": "2026-11-24T17:45-05:00",
   "book_asof": "2026-10-12T10:41:00-04:00",
   "book_source": "TMSG screenshots IMG_6855\u20136861 from Giannis Bitounis, reply of 2026-10-12 10:45 ET",
   "network": "GTC-2026 North America Group B",
-  "value": 749873.3821568163,
+  "value": 749927.6179209993,
   "start_value": 1000000.0,
   "cash": 0.0,
-  "book_ret": -0.2501266178431837,
+  "book_ret": -0.25007238207900073,
   "bench_ret": -0.07744045218964068,
-  "relative": -0.172686165653543,
-  "day_pnl": -25794.023641072872,
+  "relative": -0.17263192988936005,
+  "day_pnl": -25739.787876889943,
   "rows": [
     {
       "ticker": "HUM",
@@ -21,23 +21,23 @@
       "notional": 180000,
       "entry": 431.25,
       "shares": 417.39130434782606,
-      "last": 402.75,
-      "value": 168104.34782608695,
-      "pnl": -11895.652173913055,
-      "pnl_pct": -0.06608695652173913,
-      "day_pct": 0.04970287739783141,
+      "last": 402.7200012207031,
+      "value": 168091.82659646738,
+      "pnl": -11908.173403532623,
+      "pnl_pct": -0.06615651890851448,
+      "day_pct": 0.04962469042093187,
       "thesis": "2027 stars recovery and CenterWell growth, confirmed by a guidance raise and benign cost trend. Post-earnings drift into Nov 13 with analysts still raising targets.",
       "exit": "A close below $410, a CMS recalculation of 2027 stars, or a guidance walk-back.",
       "stop": 409.69,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.01722532588454384,
+      "stop_distance": 0.01730109941939162,
       "suggested_stop": {
         "price": 368.77,
         "pct": -0.1462,
         "basis": "kept: TMSG auto close; tool's thesis stop $410 (-5.1%) is the close rule"
       },
-      "weight": 0.22417697684184815
+      "weight": 0.2241440674800897
     },
     {
       "ticker": "GS",
@@ -49,19 +49,19 @@
       "notional": 180000,
       "entry": 894.1,
       "shares": 201.31976289005704,
-      "last": 806.0,
-      "value": 162263.72888938597,
-      "pnl": -17736.271110614034,
-      "pnl_pct": -0.09853483950341124,
-      "day_pct": -0.020668035625326486,
+      "last": 806.02001953125,
+      "value": 162267.75921667038,
+      "pnl": -17732.240783329617,
+      "pnl_pct": -0.09851244879627563,
+      "day_pct": -0.02064371085254124,
       "thesis": "",
       "exit": "",
       "stop": 849.39,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.053839950372208456,
+      "stop_distance": 0.05381377561065448,
       "suggested_stop": null,
-      "weight": 0.2163881699903475
+      "weight": 0.21637789479806088
     },
     {
       "ticker": "GEV",
@@ -73,19 +73,19 @@
       "notional": 180000,
       "entry": 996.67,
       "shares": 180.6014026708941,
-      "last": 720.2119750976562,
-      "value": 130071.29292301176,
-      "pnl": -49928.70707698824,
-      "pnl_pct": -0.27738170598326806,
-      "day_pct": -0.04615265661317469,
+      "last": 720.6500244140625,
+      "value": 130150.40524399375,
+      "pnl": -49849.59475600625,
+      "pnl_pct": -0.27694219308892354,
+      "day_pct": -0.04557250494786835,
       "thesis": "",
       "exit": "",
       "stop": 946.84,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.31466364450773643,
+      "stop_distance": 0.3138645221997216,
       "suggested_stop": null,
-      "weight": 0.1734576743461615
+      "weight": 0.1735506229318579
     },
     {
       "ticker": "COHR",
@@ -109,7 +109,7 @@
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.43197101576614494,
       "suggested_stop": null,
-      "weight": 0.15924798464007583
+      "weight": 0.15923646761371865
     },
     {
       "ticker": "PENG",
@@ -133,7 +133,7 @@
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.9652382379489779,
       "suggested_stop": null,
-      "weight": 0.11603605808207419
+      "weight": 0.11602766619980119
     },
     {
       "ticker": "DVN",
@@ -145,19 +145,19 @@
       "notional": 80000,
       "entry": 48.815,
       "shares": 1638.8405203318653,
-      "last": 41.34000015258789,
-      "value": 67749.66736058652,
-      "pnl": -12250.332639413478,
-      "pnl_pct": -0.15312915799266835,
-      "day_pct": 0.0070645591373421635,
+      "last": 41.33000183105469,
+      "value": 67733.28170612261,
+      "pnl": -12266.718293877391,
+      "pnl_pct": -0.15333397867346743,
+      "day_pct": 0.006820994666374869,
       "thesis": "",
       "exit": "",
       "stop": 46.37,
       "stop_pct": -0.05,
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
-      "stop_distance": 0.12177672541921747,
+      "stop_distance": 0.12204809933386307,
       "suggested_stop": null,
-      "weight": 0.09034814273007287
+      "weight": 0.0903197589840703
     },
     {
       "ticker": "SPCX",
@@ -181,7 +181,7 @@
       "stop_set_by": "team (TMSG auto close, Giannis, Oct 12)",
       "stop_distance": 0.2453978462802806,
       "suggested_stop": null,
-      "weight": 0.020344993369420042
+      "weight": 0.020343521992401355
     }
   ],
   "series": [
@@ -342,7 +342,7 @@
     },
     {
       "date": "2026-11-24",
-      "book": 749873.38,
+      "book": 749927.62,
       "bench": 922559.55
     }
   ],
